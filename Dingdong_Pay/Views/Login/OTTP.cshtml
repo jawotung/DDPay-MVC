@@ -1,0 +1,41 @@
+﻿@{
+    ViewBag.Title = "OTP";
+    ViewBag.Image = "/Content/app-assets/fonts/Sel-Icons/DDP Icons/Illustrations/initial.png";
+    Layout = "~/Views/Shared/_LoginLayout.cshtml";
+}
+
+@section css{
+    @Styles.Render("~/OTTP-CSS")
+    <style>
+        .feather-24 {
+            width: 24px;
+            height: 24px;
+        }
+    </style>
+}
+<div class="col-12 col-sm-8 col-md-6 col-lg-12 px-xl-2 mx-auto">
+    <img src="~/Content/app-assets/fonts/Sel-Icons/DDP Icons/ddp logo.png" style="width:50px;padding-bottom:20px" />
+    <br />
+    <a href="@Url.Action("Index", "Login" )" style="font-size: 14px; font-weight: 500; color: #7573b6;">
+        <i class="icons8-purple-back"></i> Back to login
+    </a>
+    <h2 class="card-title font-weight-bold mb-1" style="font-size: 32px; font-weight: 700!important; color: #25215e;line-height:48px">Enter OTP</h2>
+    <p class="card-text mb-2" style="width: 340px;font-size: 16px;color: #545254;">Type in the one-time PIN sent to your email.</p>
+    <div class="alert alert-danger" role="alert" id="ErrorAlert" style="display:none">
+        <h4 class="alert-heading">Error:</h4>
+        <div class="alert-body" id="ErrorList">
+        </div>
+    </div>
+    <form class="auth-login-form mt-2" data-parsley-validate="true" id="frmLogin">
+        <div class="form-group">
+            <label class="form-label" for="OOTP">OTP</label>
+            <input class="form-control Number-Only" maxlength="6" id="OTP" type="text" name="OTP" required placeholder="Enter OTP" autocomplete="off" aria-describedby="OOTP" autofocus="" tabindex="1"/>
+        </div><br />
+        <button type="submit" id="btnOTP" class="btn btn-primary btn-block" tabindex="4" style="font-size: 16px; font-weight: 500; color: #979597;">Next</button>
+    </form>
+    <p class="text-center mt-2"><span>Didn't get the code? </span><a href=""><span class="countdown"></span></a></p>
+</div>
+@section scripts{
+    @Scripts.Render("~/OTTP-JS")
+}
+

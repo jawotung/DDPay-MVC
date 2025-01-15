@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewBag.Title | Dingdong Pay System</title>
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
+    @RenderSection("css", required: false)
+
+    <link rel="stylesheet" type="text/css" href="~/Content/app-assets/vendors/css/vendors.min.css">
+    <link rel="stylesheet" type="text/css" href="~/Content/app-assets/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="~/Content/app-assets/css/bootstrap-extended.css">
+    <link rel="stylesheet" type="text/css" href="~/Content/app-assets/css/colors.css">
+    <link rel="stylesheet" type="text/css" href="~/Content/app-assets/css/components.css">
+    <link rel="stylesheet" type="text/css" href="~/Content/app-assets/css/themes/dark-layout.css">
+    <link rel="stylesheet" type="text/css" href="~/Content/app-assets/css/themes/semi-dark-layout.css">
+    <link rel="stylesheet" type="text/css" href="~/Content/app-assets/css/core/menu/menu-types/vertical-menu.css">
+    <link rel="stylesheet" type="text/css" href="~/Content/app-assets/css/core/colors/palette-gradient.css">
+    
+    <link rel="stylesheet" type="text/css" href="~/Content/app-assets/css/pages/authentication.css">
+    <link rel="stylesheet" type="text/css" href="~/Content/assets/plugins/iziToast/dist/css/iziToast.min.css">
+    <link rel="stylesheet" type="text/css" href="~/Content/assets/plugins/iziModal/css/iziModal.css">
+    <link rel="stylesheet" type="text/css" href="~/Content/assets/plugins/Parsleyjs/src/parsley.min.css">
+    <link rel="stylesheet" type="text/css" href="~/Content/assets/plugins/select2/dist/css/select2.css">
+    <link rel="stylesheet" type="text/css" href="~/Content/assets/plugins/select2/dist/css/select2-bootstrap4.css">
+
+
+    <link rel="stylesheet" type="text/css" href="~/Content/assets/css/style.css">
+
+    <link rel="icon" href="~/Content/assets/img/logo/favicon.ico" type="image/x-icon">
+</head>
+
+<body class="vertical-layout vertical-menu-modern 1-column  navbar-floating footer-static bg-full-screen-image  blank-page blank-page" data-open="click" data-menu="vertical-menu-modern" data-col="1-column">
+    <!-- BEGIN: Content-->
+    <div class="app-content content">
+        <div class="content-overlay"></div>
+        <div class="header-navbar-shadow"></div>
+        <div class="content-wrapper">
+            <div class="content-header row">
+            </div>
+            <div class="content-body">
+                <section class="row flexbox-container">
+                    <div class="col-xl-8 col-11 d-flex justify-content-center">
+                        <div class="card bg-authentication rounded-0 mb-0">
+                            <div class="row m-0">
+                                <div class="col-lg-6 d-lg-block d-none text-center align-self-center px-1 py-0">
+                                    <img src="~/Content/app-assets/images/pages/login.png" alt="branding logo">
+                                </div>
+                                <div class="col-lg-6 col-12 p-0">
+                                    @RenderBody()
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+        </div>
+    </div>
+    @RenderSection("scripts", required: false)
+</body>
+
+</html>

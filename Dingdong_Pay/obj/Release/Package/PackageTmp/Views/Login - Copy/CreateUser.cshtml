@@ -1,0 +1,61 @@
+﻿@{
+    ViewBag.Title = "Create New Account";
+    Layout = "~/Views/Shared/_LoginLayout.cshtml";
+}
+<div class="card rounded-0 mb-0 p-2">
+    <div class="card-header pt-50 pb-1">
+        <div class="card-title">
+            <h4 class="mb-0">Create Account</h4>
+        </div>
+    </div>
+    <p class="px-2">Fill the below form to create a new account.</p>
+    <div class="card-content">
+        <div class="card-body pt-0">
+            <form data-parsley-validate="true" id="frmUser">
+                <div class="form-label-group">
+                    <input type="text" id="Username" name="Username" class="form-control input" placeholder="Username" data-parsley-required data-parsley-maxlength="20" maxlength="20" data-parsley-errors-container="#err-Username" autocomplete="off">
+                    <label>Username</label>
+                </div>
+                <div class="form-label-group">
+                    <input type="password" id="Password" name="Password" class="form-control input" placeholder="Password" required data-parsley-errors-container="#err-Password" autocomplete="off">
+                    <label>Password</label>
+                </div>
+                <div class="form-label-group">
+                    <input type="text" id="FirstName" name="FirstName" class="form-control input" placeholder="First Name" data-parsley-required data-parsley-maxlength="200" maxlength="200" data-parsley-errors-container="#err-FirstName" autocomplete="off">
+                    <label>First Name</label>
+                </div>
+                <div class="form-label-group">
+                    <input type="text" id="MiddleName" name="MiddleName" class="form-control input" placeholder="Middle Name" required data-parsley-errors-container="#err-MiddleName" data-parsley-maxlength="200" maxlength="200" autocomplete="off">
+                    <label>Middle Name</label>
+                </div>
+                <div class="form-label-group">
+                    <input type="text" id="LastName" name="LastName" class="form-control input" placeholder="Last Name" required data-parsley-errors-container="#err-LastName" data-parsley-maxlength="200" maxlength="200" autocomplete="off">
+                    <label>Last Name</label>
+                </div>
+                <div class="form-label-group">
+                    <input type="text" id="Email" name="Email" class="form-control input" placeholder="Email" data-parsley-type="email" data-parsley-errors-container="#err-Email" data-parsley-maxlength="200" maxlength="200" autocomplete="off">
+                    <label>Email</label>
+                </div>
+                <div class="form-label-group">
+                    <select id="Department" name="Department" class="form-control input" required data-parsley-errors-container="#err-Department"></select>
+                    <label>Department</label>
+                    <div id="err-Department"></div>
+                </div>
+                <div class="form-label-group">
+                    <select id="SubDepartment" name="SubDepartment" class="form-control input" required data-parsley-errors-container="#err-SubDepartment"></select>
+                    <label>Sub Department</label>
+                    <div id="err-SubDepartment"></div>
+                </div>
+                <div class="form-label-group">
+                    <input type="text" id="Position" name="Position" class="form-control input" placeholder="Position" required data-parsley-errors-container="#err-Position" data-parsley-maxlength="200" maxlength="200" autocomplete="off">
+                    <label>Position</label>
+                </div>
+                <a href="@Url.Action("Index", "Login" )" class="btn btn-outline-primary float-left btn-inline mb-50">Login</a>
+                <button type="submit" class="btn btn-primary float-right btn-inline mb-50">Register</button>
+            </form>
+        </div>
+    </div>
+</div>
+@section scripts{
+    @Scripts.Render("~/CreateUser-JS")
+}

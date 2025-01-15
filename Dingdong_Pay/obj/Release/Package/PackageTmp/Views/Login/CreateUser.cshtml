@@ -1,0 +1,109 @@
+﻿@{
+    ViewBag.Title = "Create User";
+    ViewBag.Image = "/Content/app-assets/fonts/Sel-Icons/DDP Icons/Illustrations/reset-password.png";
+    Layout = "~/Views/Shared/_LoginLayout.cshtml";
+}
+
+@section css{
+    @Styles.Render("~/CreateUser-CSS")
+    <style>
+        .feather-24 {
+            width: 24px;
+            height: 24px;
+        }
+    </style>
+}
+<div class="col-12 col-sm-8 col-md-6 col-lg-12 px-xl-2 mx-auto">
+    <img src="~/Content/app-assets/fonts/Sel-Icons/DDP Icons/ddp logo.png" style="width:50px;padding-bottom:20px" />
+    <br />
+    <a href="@Url.Action("Index", "Login" )" style="font-size: 14px; font-weight: 500; color: #7573b6;">
+        <i class="icons8-purple-back"></i> Back to login
+    </a>
+    <h2 class="card-title font-weight-bold mb-1" style="font-size: 32px; font-weight: 700!important; color: #25215e;line-height:48px">Create an account</h2>
+    <p class="card-text mb-2" style="width: 340px;font-size: 16px;color: #545254;">Answer the field below to register</p>
+    <div class="alert alert-danger" role="alert" id="ErrorAlert" style="display:none">
+        <h4 class="alert-heading">Error:</h4>
+        <div class="alert-body" id="ErrorList">
+        </div>
+    </div>
+    <form data-parsley-validate="true" id="frmUser">
+        <div class="form-group">
+            <label class="form-label" for="Username">Username<span class="text-danger">*</span></label>
+            <input class="form-control" id="Username" type="text" name="Username" placeholder="Enter your username" required aria-describedby="Username" data-parsley-required data-parsley-maxlength="20" maxlength="20" data-parsley-errors-container="#err-Username" autocomplete="off">
+        </div>
+        <div class="form-group">
+            <label class="form-label" for="Username">Email<span class="text-danger">*</span></label>
+            <input class="form-control" id="Email" type="text" name="Email" placeholder="Enter your email" required data-parsley-type="email" data-parsley-errors-container="#err-Email" data-parsley-maxlength="200" maxlength="200" autocomplete="off">
+        </div>
+        <div class="form-group">
+            <label class="form-label" for="Username">Mobile number<span class="text-danger">*</span></label>
+            <input class="form-control" id="MobileNo" type="text" name="MobileNo" placeholder="0913 456 7890" required data-parsley-errors-container="#err-MobileNo" data-parsley-maxlength="13" maxlength="13" autocomplete="off">
+        </div>
+        <div class="form-group">
+            <div class="d-flex justify-content-between">
+                <label for="login-password">Password<span class="text-danger">*</span></label>
+            </div>
+            <div class="input-group input-group-merge form-password-toggle">
+                <input class="form-control form-control-merge" id="Password" type="password" name="Password" required placeholder="············" data-parsley-errors-container="#err-Password" autocomplete="off">
+                <div class="input-group-append">
+                    <span class="input-group-text cursor-pointer btnEye" data-password="Password">
+                        <i class="icons8-eye-lgrey"></i>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="custom-control custom-checkbox">
+                <input class="custom-control-input" id="PrivacyPolicy" type="checkbox" tabindex="3" />
+                <label class="custom-control-label" for="PrivacyPolicy"> I have read and understood the <a href="" data-toggle="modal" data-target="#mdlPrivacyPolicy"><span>&nbsp;Terms and Privacy Policy</span></a></label>
+            </div>
+        </div>
+        <button type="submit" btn="btnRegister" class="btn btn-primary btn-block" tabindex="4" style="font-size: 16px; font-weight: 500; color: #979597;">Register</button>
+    </form>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="mdlPrivacyPolicy" tabindex="-1" role="dialog" aria-labelledby="mdlPrivacyPolicy" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable" role="document" style="max-width: 629px;max-height: 700px;background-color:white">
+        <div class="modal-content">
+            <div class="modal-header" style="background-color:white">
+                <h5 class="modal-title">Terms and Privacy Policy</h5>
+            </div>
+            <div class="modal-body" style="border: 16px solid white;border-radius: 12px;background: rgba(243,243,247,0.4);">
+                <p style="font-size: 16px; font-weight: 500; text-align: left; color: #333133;">
+                    Terms and Conditions
+                </p>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. At pretium imperdiet iaculis lectus justo, arcu amet, lectus velit. Mi, bibendum amet curabitur semper laoreet sociis feugiat praesent ut. Faucibus volutpat purus mauris pretium sed hendrerit. Justo, urna, placerat varius quis scelerisque dui tempor. Eget at fermentum tortor elit nunc adipiscing imperdiet facilisis. Elementum turpis libero, dictum sagittis. Viverra dictumst nibh sed duis purus cursus vitae sed.
+
+                    Quam pretium nec pulvinar eget est dignissim dolor aliquam. Orci ipsum magna est elit. Amet ipsum egestas eget donec purus at amet massa diam. Quam egestas cursus vestibulum tellus, nibh phasellus purus. Mattis vulputate quis faucibus libero suspendisse feugiat bibendum. Velit egestas congue pharetra duis elit justo, tellus odio.
+                    Cursus purus, ullamcorper lacinia amet arcu placerat in. Tempor nibh tincidunt massa, semper donec tortor, mattis amet. Sagittis orci mi viverra praesent proin sodales euismod. Nunc fringilla tincidunt tortor nibh. Semper malesuada arcu.
+
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. At pretium imperdiet iaculis lectus justo, arcu amet, lectus velit. Mi, bibendum amet curabitur semper laoreet sociis feugiat praesent ut. Faucibus volutpat purus mauris pretium sed hendrerit. Justo, urna, placerat varius quis scelerisque dui tempor. Eget at fermentum tortor elit nunc adipiscing imperdiet facilisis. Elementum turpis libero, dictum sagittis. Viverra dictumst nibh sed duis purus cursus vitae sed.
+
+                    Quam pretium nec pulvinar eget est dignissim dolor aliquam. Orci ipsum magna est elit. Amet ipsum egestas eget donec purus at amet massa diam. Quam egestas cursus vestibulum tellus, nibh phasellus purus. Mattis vulputate quis faucibus libero suspendisse feugiat bibendum. Velit egestas congue pharetra duis elit justo, tellus odio.
+                    Cursus purus, ullamcorper lacinia amet arcu placerat in. Tempor nibh tincidunt massa, semper donec tortor, mattis amet. Sagittis orci mi viverra praesent proin sodales euismod. Nunc fringilla tincidunt tortor nibh. Semper malesuada arcu.
+                </p>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. At pretium imperdiet iaculis lectus justo, arcu amet, lectus velit. Mi, bibendum amet curabitur semper laoreet sociis feugiat praesent ut. Faucibus volutpat purus mauris pretium sed hendrerit. Justo, urna, placerat varius quis scelerisque dui tempor. Eget at fermentum tortor elit nunc adipiscing imperdiet facilisis. Elementum turpis libero, dictum sagittis. Viverra dictumst nibh sed duis purus cursus vitae sed.
+
+                    Quam pretium nec pulvinar eget est dignissim dolor aliquam. Orci ipsum magna est elit. Amet ipsum egestas eget donec purus at amet massa diam. Quam egestas cursus vestibulum tellus, nibh phasellus purus. Mattis vulputate quis faucibus libero suspendisse feugiat bibendum. Velit egestas congue pharetra duis elit justo, tellus odio.
+                    Cursus purus, ullamcorper lacinia amet arcu placerat in. Tempor nibh tincidunt massa, semper donec tortor, mattis amet. Sagittis orci mi viverra praesent proin sodales euismod. Nunc fringilla tincidunt tortor nibh. Semper malesuada arcu.
+
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. At pretium imperdiet iaculis lectus justo, arcu amet, lectus velit. Mi, bibendum amet curabitur semper laoreet sociis feugiat praesent ut. Faucibus volutpat purus mauris pretium sed hendrerit. Justo, urna, placerat varius quis scelerisque dui tempor. Eget at fermentum tortor elit nunc adipiscing imperdiet facilisis. Elementum turpis libero, dictum sagittis. Viverra dictumst nibh sed duis purus cursus vitae sed.
+
+                    Quam pretium nec pulvinar eget est dignissim dolor aliquam. Orci ipsum magna est elit. Amet ipsum egestas eget donec purus at amet massa diam. Quam egestas cursus vestibulum tellus, nibh phasellus purus. Mattis vulputate quis faucibus libero suspendisse feugiat bibendum. Velit egestas congue pharetra duis elit justo, tellus odio.
+                    Cursus purus, ullamcorper lacinia amet arcu placerat in. Tempor nibh tincidunt massa, semper donec tortor, mattis amet. Sagittis orci mi viverra praesent proin sodales euismod. Nunc fringilla tincidunt tortor nibh. Semper malesuada arcu.
+                </p>
+                <div class="row">
+                    <div class="col-8 offset-2">
+                        <button type="button" id="btnMdlRegister" class="btn btn-primary btn-block" tabindex="4" style="font-size: 16px; font-weight: 500; color: #979597;">I accept the Terms and Privacy Policy</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@section scripts{
+    @Scripts.Render("~/CreateUser-JS")
+}

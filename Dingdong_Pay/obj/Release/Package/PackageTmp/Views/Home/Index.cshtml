@@ -1,0 +1,62 @@
+﻿@{
+    ViewBag.Title = "Dashboard";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section css{
+    @Styles.Render("~/Home-CSS")
+    <link rel="stylesheet" type="text/css" href="~/Content/app-assets/css/plugins/charts/chart-apex.css">
+}
+
+<section id="apexchart">
+    <div class="row">
+        <div class="col-12" style="text-align: center;">
+            <span id="nav-month-previous" class="navMonth CursorPointer" data-action="previous"><i class="fa fa-chevron-left fa-lg"></i></span>
+            <b class="value" id="Month" style="font-size: 20px;"></b>
+            <span id="nav-month-next" class="navMonth CursorPointer" data-action="next"><i class="fa fa-chevron-right fa-lg"></i></span>
+        </div>
+        <br />
+        <div class="col-xl-6 col-12">
+            <div class="card">
+                <div class="card-header flex-column align-items-start">
+                    <h4 class="card-title mb-75">Bills</h4>
+                    @*<span class="card-subtitle text-muted">Spending on various categories </span>*@
+                </div>
+                <div class="card-body">
+                    <div id="Bills-chart"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-6 col-12">
+            <div class="card">
+                <div class="card-header d-flex flex-sm-row flex-column justify-content-md-between align-items-start justify-content-start">
+                    <h4 class="card-title mb-sm-0 mb-1">Expense vs Income</h4>
+                </div>
+                <div class="card-body">
+                    <div id="ExpenseVSIncome-chart"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-12 col-12">
+            <div class="card">
+                <div class="card-header d-flex flex-sm-row flex-column justify-content-md-between align-items-start justify-content-start">
+                    <h4 class="card-title mb-sm-0 mb-1">Top Spends</h4>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-3 col-12">
+                            <div id="TopSpends-chart"></div>
+                        </div>
+                        <div class="col-md-6 col-12">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+@section scripts{
+    @Scripts.Render("~/Home-JS")
+    <script src="~/Content/app-assets/vendors/js/charts/apexcharts.min.js"></script>
+    <script src="~/Content/app-assets/vendors/js/pickers/flatpickr/flatpickr.min.js"></script>
+}

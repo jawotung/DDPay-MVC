@@ -1,0 +1,509 @@
+﻿@{
+    ViewBag.Title = "Dashboard";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section css{
+    @Styles.Render("~/Home-CSS")
+    <link rel="stylesheet" type="text/css" href="~/Content/app-assets/css/plugins/charts/chart-apex.css">
+}
+
+
+<div class="app-content content ecommerce-application">
+    <div class="content-overlay"></div>
+    <div class="header-navbar-shadow"></div>
+    <div class="content-wrapper container-xxl p-0">
+        <div class="content-header row">
+            <div class="col-12">
+                <p style="font-size:24px;font-weight:700!important;line-height:36px;color:#25215E">@ViewBag.Title</p>
+            </div>
+            <hr />
+        </div>
+    </div>
+    <div class="content-wrapper container-xxl p-0">
+        <div class="content-header">
+            <div class="row">
+                <div class="col-lg-2">
+                    <div class="card">
+                        <div class="card-header">
+                            <div style="align-items: center;text-align: center;width: 100%;">
+                                <img src="~/Content/app-assets/fonts/Sel-Icons/DDP Icons/Illustrations/balance profit.png" width="130" height="75" />
+                                <p class="card-text p-0 m-0">LOSS</p>
+                                <h3 class="font-weight-bold mb-0 text-danger p-0">-P 8,000</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="card">
+                        <div class="card-header" style="padding: 14px;">
+                            <div style="width: 100%;">
+                                <p class="card-text p-0 m-0">Starting balance</p>
+                                <h2 class="font-weight-bolder mb-0">P 20,000</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header" style="padding: 13px;">
+                            <div style="width: 100%;">
+                                <p class="card-text p-0 m-0">Starting balance</p>
+                                <h2 class="font-weight-bolder mb-0">P 20,000</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    @*--Start Overdue and Upcomming List--*@
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="content-wrapper container-xxl p-0">
+                <div class="content-header row">
+                    <div class="col-12">
+                        <p style="font-size:16px;font-weight:700!important;line-height:36px;color:#25215E">Overdue bills</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="card">
+                        <div class="card-header">
+                            <div style="align-items: center;text-align: center;width: 100%;">
+                                <h2 class="font-weight-bolder mb-0">3</h2>
+                                <p class="card-text p-0">Bills overdue</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-5">
+                    <div class="card">
+                        <div class="card-header">
+                            <div style="align-items: center;text-align: center;width: 100%;">
+                                <h2 class="font-weight-bolder mb-0">P 20,000</h2>
+                                <p class="card-text p-0">Total amount</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="OverDueList">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-2" style="height: 100px;width: 100px;position: relative;">
+                                        <div style="top: 50%;position: absolute;top: 50%;transform: translateY(-50%);">
+                                            <div style="width: 50px; height: 50px; background: #EAE9F7; border-radius: 100px; margin: 0px 24px;">
+                                                <img src=".../../../Areas/Master/Upload/Img/ExpenseType/1.png" style="width: 50px; height: 50px; background: #EAE9F7; border-radius: 100px;" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div style="top: 50%;position: absolute;top: 50%;transform: translateY(-50%);">
+                                            <h6 class="mb-0">
+                                                <label class="text-body" style="font-size:20px;color:black;font-weight:bold;padding-right:50px">Meralco</label>
+                                            </h6>
+                                            <span class="delivery-date text-muted" style="line-height:30px">For Condo in Pasig</span>
+                                            <br />
+                                            <span class="delivery-date text-danger">Overdue <b>1 day ago</b></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-4 text-right">
+                                        <div>
+                                            <span class="delivery-date text-muted text-right" style="line-height:30px">Mar 15, 2022</span>
+                                            <br /> <br />
+                                            <button type="button" class="btn btn-gradient-primary" style="border-radius: 12px;" id="btnSDPay">Pay 2,000</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-2" style="height: 100px;width: 100px;position: relative;">
+                                        <div style="top: 50%;position: absolute;top: 50%;transform: translateY(-50%);">
+                                            <div style="width: 50px; height: 50px; background: #EAE9F7; border-radius: 100px; margin: 0px 24px;">
+                                                <img src=".../../../Areas/Master/Upload/Img/ExpenseType/188.png" style="width: 50px; height: 50px; background: #EAE9F7; border-radius: 100px;" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div style="top: 50%;position: absolute;top: 50%;transform: translateY(-50%);">
+                                            <h6 class="mb-0">
+                                                <label class="text-body" style="font-size:20px;color:black;font-weight:bold;padding-right:50px">Globe at home</label>
+                                            </h6>
+                                            <span class="delivery-date text-muted" style="line-height:30px">For Condo in Pasig</span>
+                                            <br />
+                                            <span class="delivery-date text-danger">Overdue <b>1 day ago</b></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-4 text-right">
+                                        <div>
+                                            <span class="delivery-date text-muted text-right" style="line-height:30px">Mar 15, 2022</span>
+                                            <br /> <br />
+                                            <button type="button" class="btn btn-gradient-primary" style="border-radius: 12px;" id="btnSDPay">Pay 1,899</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-2" style="height: 100px;width: 100px;position: relative;">
+                                        <div style="top: 50%;position: absolute;top: 50%;transform: translateY(-50%);">
+                                            <div style="width: 50px; height: 50px; background: #EAE9F7; border-radius: 100px; margin: 0px 24px;">
+                                                <img src=".../../../Areas/Master/Upload/Img/ExpenseType/189.png" style="width: 50px; height: 50px; background: #EAE9F7; border-radius: 100px;" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div style="top: 50%;position: absolute;top: 50%;transform: translateY(-50%);">
+                                            <h6 class="mb-0">
+                                                <label class="text-body" style="font-size:20px;color:black;font-weight:bold;padding-right:50px">Netflix</label>
+                                            </h6>
+                                            <span class="delivery-date text-muted" style="line-height:30px">Cinema</span>
+                                            <br />
+                                            <span class="delivery-date text-danger">Overdue <b>1 day ago</b></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-4 text-right">
+                                        <div>
+                                            <span class="delivery-date text-muted text-right" style="line-height:30px">Mar 15, 2022</span>
+                                            <br /> <br />
+                                            <button type="button" class="btn btn-gradient-primary" style="border-radius: 12px;" id="btnSDPay">Pay 400</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="content-wrapper container-xxl p-0">
+                <div class="content-header row">
+                    <div class="col-12">
+                        <p style="font-size:16px;font-weight:700!important;line-height:36px;color:#25215E">Upcomming bills</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="card">
+                        <div class="card-header">
+                            <div style="align-items: center;text-align: center;width: 100%;">
+                                <h2 class="font-weight-bolder mb-0">3</h2>
+                                <p class="card-text p-0">Bills upcomming</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-5">
+                    <div class="card">
+                        <div class="card-header">
+                            <div style="align-items: center;text-align: center;width: 100%;">
+                                <h2 class="font-weight-bolder mb-0">P 20,000</h2>
+                                <p class="card-text p-0">Total amount</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="UpcommingList">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-2" style="height: 100px;width: 100px;position: relative;">
+                                        <div style="top: 50%;position: absolute;top: 50%;transform: translateY(-50%);">
+                                            <div style="width: 50px; height: 50px; background: #EAE9F7; border-radius: 100px; margin: 0px 24px;">
+                                                <img src=".../../../Areas/Master/Upload/Img/ExpenseType/1.png" style="width: 50px; height: 50px; background: #EAE9F7; border-radius: 100px;" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div style="top: 50%;position: absolute;top: 50%;transform: translateY(-50%);">
+                                            <h6 class="mb-0">
+                                                <label class="text-body" style="font-size:20px;color:black;font-weight:bold;padding-right:50px">Meralco</label>
+                                            </h6>
+                                            <span class="delivery-date text-muted" style="line-height:30px">For Condo in Pasig</span>
+                                            <br />
+                                            <span class="delivery-date">Due in <b>May 25, 2022</b></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-4 text-right">
+                                        <div>
+                                            <span class="delivery-date text-muted text-right" style="line-height:30px">Mar 15, 2022</span>
+                                            <br /> <br />
+                                            <button type="button" class="btn btn-gradient-primary" style="border-radius: 12px;" id="btnSDPay">Pay 2,000</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-2" style="height: 100px;width: 100px;position: relative;">
+                                        <div style="top: 50%;position: absolute;top: 50%;transform: translateY(-50%);">
+                                            <div style="width: 50px; height: 50px; background: #EAE9F7; border-radius: 100px; margin: 0px 24px;">
+                                                <img src=".../../../Areas/Master/Upload/Img/ExpenseType/188.png" style="width: 50px; height: 50px; background: #EAE9F7; border-radius: 100px;" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div style="top: 50%;position: absolute;top: 50%;transform: translateY(-50%);">
+                                            <h6 class="mb-0">
+                                                <label class="text-body" style="font-size:20px;color:black;font-weight:bold;padding-right:50px">Globe at home</label>
+                                            </h6>
+                                            <span class="delivery-date text-muted" style="line-height:30px">For Condo in Pasig</span>
+                                            <br />
+                                            <span class="delivery-date">Due in <b>May 25, 2022</b></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-4 text-right">
+                                        <div>
+                                            <span class="delivery-date text-muted text-right" style="line-height:30px">Mar 15, 2022</span>
+                                            <br /> <br />
+                                            <button type="button" class="btn btn-gradient-primary" style="border-radius: 12px;" id="btnSDPay">Pay 1,899</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-2" style="height: 100px;width: 100px;position: relative;">
+                                        <div style="top: 50%;position: absolute;top: 50%;transform: translateY(-50%);">
+                                            <div style="width: 50px; height: 50px; background: #EAE9F7; border-radius: 100px; margin: 0px 24px;">
+                                                <img src=".../../../Areas/Master/Upload/Img/ExpenseType/189.png" style="width: 50px; height: 50px; background: #EAE9F7; border-radius: 100px;" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div style="top: 50%;position: absolute;top: 50%;transform: translateY(-50%);">
+                                            <h6 class="mb-0">
+                                                <label class="text-body" style="font-size:20px;color:black;font-weight:bold;padding-right:50px">Netflix</label>
+                                            </h6>
+                                            <span class="delivery-date text-muted" style="line-height:30px">Cinema</span>
+                                            <br />
+                                            <span class="delivery-date">Due in <b>May 25, 2022</b></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-4 text-right">
+                                        <div>
+                                            <span class="delivery-date text-muted text-right" style="line-height:30px">Mar 15, 2022</span>
+                                            <br /> <br />
+                                            <button type="button" class="btn btn-gradient-primary" style="border-radius: 12px;" id="btnSDPay">Pay 400</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    @*--END Overdue and Upcomming List--*@
+
+    @*--Start Chart--*@
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="content-wrapper container-xxl p-0">
+                <div class="content-header row">
+                    <div class="col-12">
+                        <p style="font-size:16px;font-weight:700!important;line-height:36px;color:#25215E">Transactions</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="card-title">Spendings projection</h4>
+                </div>
+                <div class="card-body">
+                    <div style="height:275px"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div><canvas class="doughnut-chart-ex chartjs chartjs-render-monitor" data-height="275" width="362" height="275" style="display: block; width: 362px; height: 275px;"></canvas></div>
+                    <hr />
+                    <div class="row">
+                        <div class="col-4 text-center">
+                            <span class="delivery-date text-muted">Recommended daily spending</span><br />
+                            <span class="delivery-date contentSecondary">P 20,000</span>
+                        </div>
+                        <div class="col-4 text-center" style="border-left: 1px solid #ebe9f1;border-right: 1px solid #ebe9f1;">
+                            <span class="delivery-date text-muted">Actual daily spending</span><br />
+                            <span class="delivery-date contentSecondary">P 20,000</span>
+                        </div>
+                        <div class="col-4 text-center">
+                            <span class="delivery-date text-muted">Projected spending</span><br />
+                            <span class="delivery-date contentSecondary">P 20,000</span>
+                        </div>
+                        <br>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="card-title">Spendings over the months</h4>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-12 text-center">
+                            <span class="delivery-date text-danger">P 2,000.00</span><br />
+                            <span class="delivery-date text-muted">than last week</span>
+                        </div>
+                    </div>
+                    <div style="height:275px"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div><canvas class="doughnut-chart-ex chartjs chartjs-render-monitor" data-height="275" width="362" height="275" style="display: block; width: 362px; height: 275px;"></canvas></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="card-title">Spendings breakdown</h4>
+                </div>
+                <div class="card-body">
+                    <div style="height:275px"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div><canvas class="doughnut-chart-ex chartjs chartjs-render-monitor" data-height="275" width="362" height="275" style="display: block; width: 362px; height: 275px;"></canvas></div>
+                    <hr />
+                    <div class="d-flex justify-content-between mt-3 mb-1">
+                        <div class="d-flex align-items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-monitor font-medium-2 text-primary"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+                            <span class="font-weight-bold ml-75 mr-25">Desktop</span>
+                            <span>- 80%</span>
+                        </div>
+                        <div>
+                            <span>2%</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-up text-success"><line x1="12" y1="19" x2="12" y2="5"></line><polyline points="5 12 12 5 19 12"></polyline></svg>
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-between mb-1">
+                        <div class="d-flex align-items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tablet font-medium-2 text-warning"><rect x="4" y="2" width="16" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
+                            <span class="font-weight-bold ml-75 mr-25">Mobile</span>
+                            <span>- 10%</span>
+                        </div>
+                        <div>
+                            <span>8%</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-up text-success"><line x1="12" y1="19" x2="12" y2="5"></line><polyline points="5 12 12 5 19 12"></polyline></svg>
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-between">
+                        <div class="d-flex align-items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tablet font-medium-2 text-success"><rect x="4" y="2" width="16" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
+                            <span class="font-weight-bold ml-75 mr-25">Tablet</span>
+                            <span>- 10%</span>
+                        </div>
+                        <div>
+                            <span>-5%</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-down text-danger"><line x1="12" y1="5" x2="12" y2="19"></line><polyline points="19 12 12 19 5 12"></polyline></svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <div class="row" style="padding-top:10px">
+                        <div class="col-6">
+                            <h4 class="card-title">Transaction history</h4>
+                        </div>
+                        <div class="col-6 text-right">
+                            <a href="#"><u>View all</u></a>
+                        </div>
+                    </div>
+                    <hr />
+                    <div class="row" style="padding-top:10px">
+                        <div class="col-12">
+                            <div class="row">
+                                <div class="col-2" style="height: 50px;width: 100px;position: relative;">
+                                    <div style="top: 50%;position: absolute;top: 50%;transform: translateY(-50%);">
+                                        <div style="width: 50px; height: 50px; background: #EAE9F7; border-radius: 100px; margin: 0px 24px;">
+                                            <img src=".../../../Areas/Master/Upload/Img/ExpenseType/1.png" style="width: 50px; height: 50px; background: #EAE9F7; border-radius: 100px;" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div style="top: 50%;position: absolute;top: 50%;transform: translateY(-50%);">
+                                        <h6 class="mb-0">
+                                            <label class="text-body" style="font-size:20px;color:black;font-weight:bold;">Meralco</label>
+                                        </h6>
+                                        <span class="delivery-date text-muted" style="line-height:30px">For meralco</span><br />
+                                        <span class="delivery-date text-muted" style="line-height:30px">Ref no 1234</span>
+                                    </div>
+                                </div>
+                                <div class="col-4 text-right">
+                                    <div>
+                                        <h6 class="mb-0">
+                                            <label class="text-body" style="font-size:20px;color:black;font-weight:bold;">P 750</label>
+                                        </h6>
+                                        <span class="delivery-date text-muted text-right" style="line-height:30px">Mar 15, 2022</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr />
+                            <div class="row" style="padding-top:10px">
+                                <div class="col-2" style="height: 50px;width: 100px;position: relative;">
+                                    <div style="top: 50%;position: absolute;top: 50%;transform: translateY(-50%);">
+                                        <div style="width: 50px; height: 50px; background: #EAE9F7; border-radius: 100px; margin: 0px 24px;">
+                                            <img src=".../../../Areas/Master/Upload/Img/ExpenseType/189.png" style="width: 50px; height: 50px; background: #EAE9F7; border-radius: 100px;" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div style="top: 50%;position: absolute;top: 50%;transform: translateY(-50%);">
+                                        <h6 class="mb-0">
+                                            <label class="text-body" style="font-size:20px;color:black;font-weight:bold;">Netflix</label>
+                                        </h6>
+                                        <span class="delivery-date text-muted" style="line-height:30px">Cinema</span><br />
+                                        <span class="delivery-date text-muted" style="line-height:30px">Ref no 1234</span>
+                                    </div>
+                                </div>
+                                <div class="col-4 text-right">
+                                    <div>
+                                        <h6 class="mb-0">
+                                            <label class="text-body" style="font-size:20px;color:black;font-weight:bold;">P 750</label>
+                                        </h6>
+                                        <span class="delivery-date text-muted text-right" style="line-height:30px">Mar 15, 2022</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    @*--END Chart--*@
+</div>
+
+@section scripts{
+    @Scripts.Render("~/Home-JS")
+    <script src="~/Content/app-assets/vendors/js/charts/apexcharts.min.js"></script>
+    <script src="~/Content/app-assets/vendors/js/pickers/flatpickr/flatpickr.min.js"></script>
+}

@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewBag.Title | dingdong pay System</title>
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
+    @RenderSection("css", required: false)
+    @*<script src="/Content/assets/plugins/pace/pace.min.js"></script>*@
+    <link rel="icon" href="~/Content/assets/img/logo/favicon.ico" type="image/x-icon">
+</head>
+
+<body class="vertical-layout vertical-menu-modern 2-columns  navbar-floating footer-static  " data-open="click" data-menu="vertical-menu-modern" data-col="2-columns">
+
+    @Html.Partial("~/Views/Shared/_Dialog.cshtml")
+    @Html.Partial("~/Views/Shared/_Header.cshtml")
+    @Html.Partial("~/Views/Shared/_Sidebar.cshtml")
+
+
+    <div class="app-content content">
+        <div class="content-overlay"></div>
+        <div class="header-navbar-shadow"></div>
+        <div class="content-wrapper">
+            <div class="content-body">
+                @RenderBody()
+            </div>
+        </div>
+    </div>
+    @RenderSection("scripts", required: false)
+</body>
+</html>

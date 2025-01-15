@@ -1,0 +1,49 @@
+﻿<nav class="header-navbar navbar-expand-lg navbar navbar-with-menu floating-nav navbar-light navbar-shadow">
+    <div class="navbar-wrapper" style="width: 100%;">
+        <div class="navbar-container content">
+            <div class="navbar-collapse" id="navbar-mobile">
+                <div class="bookmark-wrapper">
+                    <p style="margin: 0px; font-size: 12px;" class="text-muted">Balance</p>
+                    <p style="margin:0px;font-size: 20px; font-weight: 700!important; color: #25215e;">P 250,000.00</p>
+                </div>
+                <ul class="nav navbar-nav align-items-center ml-auto">
+                    <li class="nav-item dropdown dropdown-notification mr-25">
+                        <a class="nav-link" href="javascript:void(0);" data-toggle="dropdown">
+                            <i class="b-size icons8-purple-notification" data-size="24"></i>
+                            <span class="badge badge-pill badge-danger badge-up">5</span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-media dropdown-menu-right">
+                            <li class="dropdown-menu-header">
+                                <div class="dropdown-header d-flex">
+                                    <h4 class="notification-title mb-0 mr-auto">Notifications</h4>
+                                </div>
+                            </li>
+                            <li class="scrollable-container media-list">
+                            </li>
+                        </ul>
+                    </li>
+                    @*<li class="nav-item dropdown dropdown-user">
+                            <a class="nav-link dropdown-toggle dropdown-user-link" id="dropdown-user" href="javascript:void(0);" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <div class="user-nav d-sm-flex d-none"><span class="user-name font-weight-bolder">@Session["FullName"].ToString()</span><span class="user-status">Admin</span></div><span class="avatar">
+                                    <img class="round" src="~/Content/app-assets/images/portrait/small/avatar-s-11.jpg" alt="avatar" height="40" width="40"><span class="avatar-status-online"></span>
+                                </span>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdown-user">
+                                <div class="dropdown-divider"></div><button id="btnLogout" class="dropdown-item" type="button" style="width:100%"><i class="feather icon-power"></i> Logout</button>
+                            </div>
+                        </li>*@
+                </ul>
+            </div>
+        </div>
+    </div>
+</nav>    
+<form action="/Login/Logout" method="POST" id="frmLogout">
+    @Html.AntiForgeryToken()
+</form>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        $("#btnLogout").click(function () {
+            $("#frmLogout").submit();
+        });
+    });
+</script>

@@ -1,0 +1,67 @@
+﻿@{
+    ViewBag.Title = "Login";
+    ViewBag.Image = "/Content/app-assets/fonts/Sel-Icons/DDP Icons/Illustrations/initial.png";
+    Layout = "~/Views/Shared/_LoginLayout.cshtml";
+}
+
+@section css{
+    @Styles.Render("~/Login-CSS")
+    <style>
+        .feather-24 {
+            width: 24px;
+            height: 24px;
+        }
+    </style>
+}
+
+<div class="col-12 col-sm-8 col-md-6 col-lg-12 px-xl-2 mx-auto">
+    <img src="~/Content/app-assets/fonts/Sel-Icons/DDP Icons/ddp logo.png" style="width:50px;padding-bottom:10px" />
+    <h2 class="card-title font-weight-bold mb-1" style="font-size: 32px; font-weight: 700!important; color: #25215e;line-height:48px">
+        dingdong pay
+    </h2>
+    <p class="card-text mb-2" style="width: 340px;font-size: 16px;color: #545254;">Welcome to dingdong Pay! Sign in to get a head start in managing your finances.</p>
+    <div class="alert alert-danger" role="alert" id="ErrorAlert" style="display:none">
+        <h4 class="alert-heading">Error:</h4>
+        <div class="alert-body" id="ErrorList">
+        </div>
+    </div>
+    <form class="auth-login-form mt-2" data-parsley-validate="true" id="frmLogin">
+        <div class="form-group">
+            <label class="form-label" for="Username">Username</label>
+            <input class="form-control" id="Username" type="text" name="Username" placeholder="Enter your username" aria-describedby="Username" autofocus="" tabindex="1" />
+        </div>
+        <div class="form-group">
+            <div class="d-flex justify-content-between">
+                <label for="login-password">Password</label><a href="@Url.Action("ForgotPassword", "Login" )"><small>Forgot Password?</small></a>
+            </div>
+            <div class="input-group input-group-merge form-password-toggle">
+                <input class="form-control form-control-merge" id="Password" type="password" name="Password" placeholder="············" aria-describedby="login-password" tabindex="2" />
+                <div class="input-group-append">
+                    <span class="input-group-text cursor-pointer btnEye" data-password="Password">
+                        <i class="icons8-eye-lgrey"></i>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="custom-control custom-checkbox">
+                <input class="custom-control-input" id="remember-me" type="checkbox" tabindex="3" />
+                <label class="custom-control-label" for="remember-me"> Remember Me</label>
+            </div>
+        </div>
+        <button class="btn btn-primary btn-block" tabindex="4">Log in</button>
+    </form>
+    <p class="text-center mt-2"><span>Dont have an account yet? </span><a href="@Url.Action("CreateUser", "Login" )"><span>&nbsp;Create an account.</span></a></p>
+    <div class="divider my-2">
+        <div class="divider-text">or</div>
+    </div>
+    <div class="auth-footer-btn d-flex justify-content-center">
+        <a class="btn btn-facebook" href="javascript:void(0)"><i class="b-size icons8-white-facebook-f" data-size="24"></i></a>
+           
+        <a class="btn btn-google" href="javascript:void(0)"> <i class="b-size icons8-white-google" data-size="24"></i></a>
+    </div>
+</div>
+@section scripts{
+    @Scripts.Render("~/Login-JS")
+}
+

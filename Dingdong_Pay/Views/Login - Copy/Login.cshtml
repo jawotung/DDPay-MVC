@@ -1,0 +1,54 @@
+﻿@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_LoginLayout.cshtml";
+}
+
+@section css{
+    @Scripts.Render("~/Login-CSS")
+}
+<div class="card rounded-0 mb-0 px-2">
+    <div class="card-header pb-1">
+        <div class="card-title">
+            <h4 class="mb-0">Login</h4>
+        </div>
+    </div>
+    <p class="px-2">Welcome back, please login to your account.</p>
+    <div class="card-content">
+        <div class="card-body pt-1">
+            <form data-parsley-validate="true" id="frmLogin">
+                <fieldset class="form-label-group form-group position-relative has-icon-left">
+                    <input type="text" class="form-control input" id="Username" name="Username" placeholder="Username" required data-parsley-required data-parsley-maxlength="20" maxlength="20" data-parsley-errors-container="#err-Username" autocomplete="off">
+                    <div class="form-control-position">
+                        <i class="feather icon-user"></i>
+                    </div>
+                    <label for="user-name">Username</label>
+                    <div id="err-Username"></div>
+                </fieldset>
+
+                <fieldset class="form-label-group position-relative has-icon-left">
+                    <input type="password" class="form-control input" id="Password" name="Password" placeholder="Password" required data-parsley-required data-parsley-errors-container="#err-Password" autocomplete="off">
+                    <div class="form-control-position">
+                        <i class="feather icon-lock"></i>
+                    </div>
+                    <label for="user-password">Password</label>
+                </fieldset>
+                <div id="err-Password"></div>
+                <div class="form-group d-flex justify-content-between align-items-center">
+                    <div class="text-left">
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary float-right btn-inline">Login</button>
+            </form>
+        </div>
+    </div>
+    <div class="login-footer">
+        <div class="divider">
+        </div>
+        <div class="footer-btn d-inline">
+        </div>
+    </div>
+</div>
+@section scripts{
+    @Scripts.Render("~/Login-JS")
+}
+
