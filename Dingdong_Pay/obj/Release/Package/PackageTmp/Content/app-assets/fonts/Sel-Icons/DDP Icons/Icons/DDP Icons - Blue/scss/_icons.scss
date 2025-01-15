@@ -1,0 +1,179 @@
+// Icons
+// -------------------------
+
+.icons8-blue-calendar:before,
+.icons8-blue-notification:before,
+.icons8-blue-forward:before,
+.icons8-blue-back:before,
+.icons8-blue-expand-arrow:before,
+.icons8-blue-collapse-arrow:before,
+.icons8-blue-done:before,
+.icons8-blue-settings:before,
+.icons8-blue-technical-support:before,
+.icons8-blue-male-user:before,
+.icons8-blue-pie-chart:before,
+.icons8-blue-ledger:before,
+.icons8-blue-wallet:before,
+.icons8-blue-bill:before,
+.icons8-blue-dashboard-layout:before,
+.icons8-blue-google:before,
+.icons8-blue-bank-cards:before,
+.icons8-blue-lock:before,
+.icons8-blue-multiply:before,
+.icons8-blue-add:before,
+.icons8-blue-facebook-f:before,
+.icons8-blue-mail:before,
+.icons8-blue-padlock:before,
+.icons8-blue-visa:before,
+.icons8-blue-hide:before,
+.icons8-blue-eye:before,
+.icons8-blue-search:before,
+.icons8-blue-plus:before,
+.icons8-blue-upload:before,
+.icons8-blue-list:before,
+.icons8-blue-download:before,
+.icons8-blue-flag-2:before,
+.icons8-blue-available-updates:before,
+.icons8-blue-organization:before,
+.icons8-blue-approval:before,
+.icons8-blue-funnel:before,
+.icons8-blue-menu-vertical:before,
+.icons8-blue-edit:before,
+.icons8-blue-in-progress:before,
+.icons8-blue-ok:before,
+.icons8-blue-file:before,
+.icons8-blue-waste:before,
+[data-icons8]:before {
+  @include icons8-font;
+}
+
+[data-icons8]:before {
+  content: attr(data-icons8);
+}
+
+.icons8-blue-calendar:before {
+  content: $icons8-var-calendar;
+}
+.icons8-blue-notification:before {
+  content: $icons8-var-notification;
+}
+.icons8-blue-forward:before {
+  content: $icons8-var-forward;
+}
+.icons8-blue-back:before {
+  content: $icons8-var-back;
+}
+.icons8-blue-expand-arrow:before {
+  content: $icons8-var-expand-arrow;
+}
+.icons8-blue-collapse-arrow:before {
+  content: $icons8-var-collapse-arrow;
+}
+.icons8-blue-done:before {
+  content: $icons8-var-done;
+}
+.icons8-blue-settings:before {
+  content: $icons8-var-settings;
+}
+.icons8-blue-technical-support:before {
+  content: $icons8-var-technical-support;
+}
+.icons8-blue-male-user:before {
+  content: $icons8-var-male-user;
+}
+.icons8-blue-pie-chart:before {
+  content: $icons8-var-pie-chart;
+}
+.icons8-blue-ledger:before {
+  content: $icons8-var-ledger;
+}
+.icons8-blue-wallet:before {
+  content: $icons8-var-wallet;
+}
+.icons8-blue-bill:before {
+  content: $icons8-var-bill;
+}
+.icons8-blue-dashboard-layout:before {
+  content: $icons8-var-dashboard-layout;
+}
+.icons8-blue-google:before {
+  content: $icons8-var-google;
+}
+.icons8-blue-bank-cards:before {
+  content: $icons8-var-bank-cards;
+}
+.icons8-blue-lock:before {
+  content: $icons8-var-lock;
+}
+.icons8-blue-multiply:before {
+  content: $icons8-var-multiply;
+}
+.icons8-blue-add:before {
+  content: $icons8-var-add;
+}
+.icons8-blue-facebook-f:before {
+  content: $icons8-var-facebook-f;
+}
+.icons8-blue-mail:before {
+  content: $icons8-var-mail;
+}
+.icons8-blue-padlock:before {
+  content: $icons8-var-padlock;
+}
+.icons8-blue-visa:before {
+  content: $icons8-var-visa;
+}
+.icons8-blue-hide:before {
+  content: $icons8-var-hide;
+}
+.icons8-blue-eye:before {
+  content: $icons8-var-eye;
+}
+.icons8-blue-search:before {
+  content: $icons8-var-search;
+}
+.icons8-blue-plus:before {
+  content: $icons8-var-plus;
+}
+.icons8-blue-upload:before {
+  content: $icons8-var-upload;
+}
+.icons8-blue-list:before {
+  content: $icons8-var-list;
+}
+.icons8-blue-download:before {
+  content: $icons8-var-download;
+}
+.icons8-blue-flag-2:before {
+  content: $icons8-var-flag-2;
+}
+.icons8-blue-available-updates:before {
+  content: $icons8-var-available-updates;
+}
+.icons8-blue-organization:before {
+  content: $icons8-var-organization;
+}
+.icons8-blue-approval:before {
+  content: $icons8-var-approval;
+}
+.icons8-blue-funnel:before {
+  content: $icons8-var-funnel;
+}
+.icons8-blue-menu-vertical:before {
+  content: $icons8-var-menu-vertical;
+}
+.icons8-blue-edit:before {
+  content: $icons8-var-edit;
+}
+.icons8-blue-in-progress:before {
+  content: $icons8-var-in-progress;
+}
+.icons8-blue-ok:before {
+  content: $icons8-var-ok;
+}
+.icons8-blue-file:before {
+  content: $icons8-var-file;
+}
+.icons8-blue-waste:before {
+  content: $icons8-var-waste;
+}

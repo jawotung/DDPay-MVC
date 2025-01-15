@@ -1,0 +1,109 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\astung\\Documents\\My Docs\\Source Code\\Dingdong_Pay 20220717\\Dingdong_Pay\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{B603971C-65D3-494B-B3D7-FA1FD097C912}|Dingdong_Pay\\Dingdong_Pay.csproj|c:\\users\\astung\\documents\\my docs\\source code\\dingdong_pay 20220717\\dingdong_pay\\dingdong_pay\\content\\assets\\css\\style.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{B603971C-65D3-494B-B3D7-FA1FD097C912}|Dingdong_Pay\\Dingdong_Pay.csproj|solutionrelative:dingdong_pay\\content\\assets\\css\\style.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B603971C-65D3-494B-B3D7-FA1FD097C912}|Dingdong_Pay\\Dingdong_Pay.csproj|c:\\users\\astung\\documents\\my docs\\source code\\dingdong_pay 20220717\\dingdong_pay\\dingdong_pay\\views\\shared\\_dialog.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B603971C-65D3-494B-B3D7-FA1FD097C912}|Dingdong_Pay\\Dingdong_Pay.csproj|solutionrelative:dingdong_pay\\views\\shared\\_dialog.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B603971C-65D3-494B-B3D7-FA1FD097C912}|Dingdong_Pay\\Dingdong_Pay.csproj|c:\\users\\astung\\documents\\my docs\\source code\\dingdong_pay 20220717\\dingdong_pay\\dingdong_pay\\areas\\transaction\\scripts\\accounts.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{B603971C-65D3-494B-B3D7-FA1FD097C912}|Dingdong_Pay\\Dingdong_Pay.csproj|solutionrelative:dingdong_pay\\areas\\transaction\\scripts\\accounts.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B603971C-65D3-494B-B3D7-FA1FD097C912}|Dingdong_Pay\\Dingdong_Pay.csproj|c:\\users\\astung\\documents\\my docs\\source code\\dingdong_pay 20220717\\dingdong_pay\\dingdong_pay\\areas\\master\\scripts\\user.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{B603971C-65D3-494B-B3D7-FA1FD097C912}|Dingdong_Pay\\Dingdong_Pay.csproj|solutionrelative:dingdong_pay\\areas\\master\\scripts\\user.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B603971C-65D3-494B-B3D7-FA1FD097C912}|Dingdong_Pay\\Dingdong_Pay.csproj|C:\\Users\\astung\\Documents\\My Docs\\Source Code\\Dingdong_Pay 20220717\\Dingdong_Pay\\dingdong_pay\\content\\js\\common\\data.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{B603971C-65D3-494B-B3D7-FA1FD097C912}|Dingdong_Pay\\Dingdong_Pay.csproj|solutionrelative:dingdong_pay\\content\\js\\common\\data.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "User.js",
+              "DocumentMoniker": "C:\\Users\\astung\\Documents\\My Docs\\Source Code\\Dingdong_Pay 20220717\\Dingdong_Pay\\Dingdong_Pay\\Areas\\Master\\Scripts\\User.js",
+              "RelativeDocumentMoniker": "Dingdong_Pay\\Areas\\Master\\Scripts\\User.js",
+              "ToolTip": "C:\\Users\\astung\\Documents\\My Docs\\Source Code\\Dingdong_Pay 20220717\\Dingdong_Pay\\Dingdong_Pay\\Areas\\Master\\Scripts\\User.js",
+              "RelativeToolTip": "Dingdong_Pay\\Areas\\Master\\Scripts\\User.js",
+              "ViewState": "AQIAAHEBAAAAAAAAAIAwwIEBAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2024-10-07T08:52:13.892Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "style.css",
+              "DocumentMoniker": "C:\\Users\\astung\\Documents\\My Docs\\Source Code\\Dingdong_Pay 20220717\\Dingdong_Pay\\Dingdong_Pay\\Content\\assets\\css\\style.css",
+              "RelativeDocumentMoniker": "Dingdong_Pay\\Content\\assets\\css\\style.css",
+              "ToolTip": "C:\\Users\\astung\\Documents\\My Docs\\Source Code\\Dingdong_Pay 20220717\\Dingdong_Pay\\Dingdong_Pay\\Content\\assets\\css\\style.css",
+              "RelativeToolTip": "Dingdong_Pay\\Content\\assets\\css\\style.css",
+              "ViewState": "AQIAAAwAAAAAAAAAAAAkwB0AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-01-14T01:47:39.322Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "_Dialog.cshtml",
+              "DocumentMoniker": "C:\\Users\\astung\\Documents\\My Docs\\Source Code\\Dingdong_Pay 20220717\\Dingdong_Pay\\Dingdong_Pay\\Views\\Shared\\_Dialog.cshtml",
+              "RelativeDocumentMoniker": "Dingdong_Pay\\Views\\Shared\\_Dialog.cshtml",
+              "ToolTip": "C:\\Users\\astung\\Documents\\My Docs\\Source Code\\Dingdong_Pay 20220717\\Dingdong_Pay\\Dingdong_Pay\\Views\\Shared\\_Dialog.cshtml",
+              "RelativeToolTip": "Dingdong_Pay\\Views\\Shared\\_Dialog.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-01-14T01:46:50.722Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Accounts.js",
+              "DocumentMoniker": "C:\\Users\\astung\\Documents\\My Docs\\Source Code\\Dingdong_Pay 20220717\\Dingdong_Pay\\Dingdong_Pay\\Areas\\Transaction\\Scripts\\Accounts.js",
+              "RelativeDocumentMoniker": "Dingdong_Pay\\Areas\\Transaction\\Scripts\\Accounts.js",
+              "ToolTip": "C:\\Users\\astung\\Documents\\My Docs\\Source Code\\Dingdong_Pay 20220717\\Dingdong_Pay\\Dingdong_Pay\\Areas\\Transaction\\Scripts\\Accounts.js",
+              "RelativeToolTip": "Dingdong_Pay\\Areas\\Transaction\\Scripts\\Accounts.js",
+              "ViewState": "AQIAAEEAAAAAAAAAAAAAwFQAAAA4AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2025-01-14T01:18:24.177Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:13:0:{2456bd12-ecf7-4988-a4a6-67d49173f565}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Data.js",
+              "DocumentMoniker": "C:\\Users\\astung\\Documents\\My Docs\\Source Code\\Dingdong_Pay 20220717\\Dingdong_Pay\\Dingdong_Pay\\Content\\js\\common\\Data.js",
+              "RelativeDocumentMoniker": "Dingdong_Pay\\Content\\js\\common\\Data.js",
+              "ToolTip": "C:\\Users\\astung\\Documents\\My Docs\\Source Code\\Dingdong_Pay 20220717\\Dingdong_Pay\\Dingdong_Pay\\Content\\js\\common\\Data.js",
+              "RelativeToolTip": "Dingdong_Pay\\Content\\js\\common\\Data.js",
+              "ViewState": "AQIAAAoAAAAAAAAAAAAQwBcAAAAzAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2024-10-07T08:53:05.569Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

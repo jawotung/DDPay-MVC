@@ -1,0 +1,283 @@
+﻿@{
+    ViewBag.Title = "Budget";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section css{
+    @Styles.Render("~/Budget-CSS")
+    <link href="~/Content/app-assets/css/pages/app-ecommerce.css" rel="stylesheet" />
+    <style>
+        .contentSecondary {
+            color: #545254;
+            line-height: 35px;
+            font-weight: 400;
+            font-size: 14px;
+        }
+    </style>
+}
+<div class="app-content content ecommerce-application">
+    <div class="content-overlay"></div>
+    <div class="header-navbar-shadow"></div>
+    <div class="content-wrapper container-xxl p-0">
+        <div class="content-header row">
+            <div class="col-12">
+                <p style="font-size:24px;font-weight:700!important;line-height:36px;color:#25215E">@ViewBag.Title</p>
+            </div>
+        </div>
+    </div>
+    <div class="content-wrapper container-xxl p-0">
+        <div class="content-body">
+
+            <div class="row" style="padding-top:10px;height:55px;margin-right:0px;padding-left:20px">
+                <div class="col-sm-2" style="padding: 0px;padding-left:0px">
+                    <button type="button" class="btn btn-primary btn-block" id="btnAdd" style="border-radius:12px;background-color:#7573B6!important">
+                        <i class="b-size icons8-white-plus" data-size="16"></i> Add budget
+                    </button>
+                </div>
+            </div>
+            <!-- Start Search -->
+            <section id="basic-horizontal-layouts" class="HaveBillData">
+                <div class="row">
+                    <div class="col-md-12 col-12">
+                        <div class="card" style="margin-bottom: 10px;">
+                            <div class="row" style="padding-top:10px;height:55px;margin-right:0px">
+                                <div class="col-sm-7">
+                                    <div class="input-group mb-2">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text" style="background-color: transparent;height:100%"><i class="icons8-black-search"></i></span>
+                                        </div>
+                                        <input type="text" class="form-control" placeholder="Search" aria-label="Search..." aria-describedby="basic-addon-search1" style="border:none;height:100%">
+                                    </div>
+                                </div>
+                                <div class="col-sm-5" style="padding: 0px;padding-left:0px">
+                                    <div class="row">
+                                        <div class="col-sm-5">
+                                            <div class="form-group">
+                                                <input type="text" id="FStartDate" name="FStartDate" class="new-todo-item-title form-control input pickadate" autocomplete="off" />
+                                            </div>
+                                        </div>
+                                        ~
+                                        <div class="col-sm-5">
+                                            <div class="form-group">
+                                                <input type="text" id="FEndDate" name="FEndDate" class="new-todo-item-title form-control input pickadate" autocomplete="off" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- End Search -->
+            <div id="place-order" class="list-view product-checkout" style="margin-top:0px">
+                <!-- Checkout Place Order Left starts -->
+                @*<div class="row">*@
+                <div class="checkout-items ScrollDesign" style="height: 650px;overflow-x: hidden;overflow-y:auto">
+                    <!-- Start List -->
+                    <div id="divBudgetList">
+                    </div>
+                    <!-- End List -->
+                </div>
+                <div class="checkout-options">
+                    <div class="card">
+                        <div class="card-body ScrollDesign" style="overflow-x: hidden;overflow-y:auto">
+                            <h4 class="card-title" style="padding-top:10px;font-weight: 700;font-size: 25px;line-height: 48px;margin:0px" id="sdBiller">May 1, 2022 - May 31, 2022</h4>
+                            <label class="section-label mb-1" id="sdBillTitle">15 days left</label>
+                            <br />
+                            <button type="button" id="btnSDEdit" class="btn btn-outline-primary" style="border-radius: 12px;"><i class="b-size icons8-black-edit"></i></button>
+                            <button type="button" id="btnSDDelete" class="btn btn-outline-danger" style="border-radius: 12px;"><i class="b-size icons8-black-waste"></i></button>
+                            <div class="row">
+                                <div class="col-6">
+                                    <span class="delivery-date contentSecondary" style="font-weight:bold">Budget: P 20,000.00</span>
+                                </div>
+                                <div class="col-6 text-right">
+                                    <span class="delivery-date text-muted">Spent: P 150,000.00</span>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-6 offset-6 text-right">
+                                    <span class="delivery-date text-muted">Left: P 50,000.00</span>
+                                </div>
+                            </div>
+                            <hr />
+                            <div class="row">
+                                <div class="col-4 text-center">
+                                    <span class="delivery-date text-muted">Recommended daily spending</span><br />
+                                    <span class="delivery-date contentSecondary">P 20,000</span>
+                                </div>
+                                <div class="col-4 text-center" style="border-left: 1px solid #ebe9f1;border-right: 1px solid #ebe9f1;">
+                                    <span class="delivery-date text-muted">Actual daily spending</span><br />
+                                    <span class="delivery-date contentSecondary">P 20,000</span>
+                                </div>
+                                <div class="col-4 text-center">
+                                    <span class="delivery-date text-muted">Projected spending</span><br />
+                                    <span class="delivery-date contentSecondary">P 20,000</span>
+                                </div>
+                                <br>
+                            </div>
+                        </div>
+                    </div>            
+                    <div class="row" style="padding-top:10px;height:55px;margin-right:0px;padding-left:20px;padding-bottom:10px">
+                        <div class="col-sm-5" style="padding: 0px;padding-left:0px">
+                            <button type="button" class="btn btn-primary btn-block" id="btnAddExpense" style="border-radius:12px;background-color:#7573B6!important">
+                                <i class="b-size icons8-white-plus" data-size="16"></i> Add expense type
+                            </button>
+                        </div>
+                    </div>
+                    <div id="divExpenseList">
+                    </div>
+                </div>
+                @*</div>*@
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal modal-slide-in sidebar-todo-modal fade" id="mdlBudget">
+    <div class="modal-dialog sidebar-xl">
+        <div class="modal-content p-0">
+            <form id="frmBudget" data-parsley-validate="true">
+                <div class="modal-header align-items-center mb-1">
+                    <h5 class="modal-title">Add budget</h5>
+                    <div class="todo-item-action d-flex align-items-center justify-content-between ml-auto">
+                        <span class="todo-item-favorite cursor-pointer mr-75" data-dismiss="modal" aria-label="Close"><i class="icons8-black-multiply"></i></span>
+                    </div>
+                </div>
+                <div class="modal-body flex-grow-1 pb-sm-0 pb-3">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="action-tags">
+                                <div class="form-group">
+                                    <label class="form-label">Amount <span class="text-danger">*</span></label>
+                                    <input type="text" id="Amount" name="Amount" required class="new-todo-item-title form-control input decimal-format" placeholder="Enter amount" autocomplete="off" />
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label class="form-label">Starting date</label>
+                                            <input type="text" id="StartDate" name="StartDate" class="new-todo-item-title form-control input pickadate" autocomplete="off" />
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label class="form-label">Ending date</label>
+                                            <input type="text" id="EndDate" name="EndDate" class="new-todo-item-title form-control input pickadate" autocomplete="off" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-10">
+                                        <label class="form-label" style="font-size: 14px;">Repeat budget</label>
+                                    </div>
+                                    <div class="col-sm-2">
+                                        <div class="action-tags">
+                                            <div class="custom-control custom-switch custom-control-inline">
+                                                <input type="checkbox" class="custom-control-input" id="Repeatbudget" value="1">
+                                                <label class="custom-control-label" for="Repeatbudget"></label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-10">
+                                        <label class="form-label" style="font-size: 14px;">Breakdown yearly budget</label>
+                                    </div>
+                                    <div class="col-sm-2">
+                                        <div class="action-tags">
+                                            <div class="custom-control custom-switch custom-control-inline">
+                                                <input type="checkbox" class="custom-control-input" id="BreakdownYear" value="1">
+                                                <label class="custom-control-label" for="BreakdownYear"></label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group" style="display:none" id="divBreakdown">
+                                    <label class="form-label">Breakdown <span class="text-danger">*</span></label>
+                                    <select id="Breakdown" name="Breakdown" class="new-todo-item-title form-control input" placeholder="Enter Breakdown" autocomplete="off">
+                                        <option value="" selected hidden>Select breakdown</option>
+                                        <option value="0">Semi-annually</option>
+                                        <option value="1">Quarterly</option>
+                                        <option value="2">Monthly</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <div class="row" style="width: 100%;">
+                        <div class="col-sm-6">
+                            <input type="hidden" name="ID" id="ID" class="input" />
+                            <button type="submit" class="btn btn-primary mr-1 btn-block">Add budget</button>
+                        </div>
+                        <div class="col-sm-6">
+                            <button type="button" class="btn btn-block btn-outline-secondary" data-dismiss="modal">
+                                Cancel
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<div class="modal modal-slide-in sidebar-todo-modal fade" id="mdlExpense">
+    <div class="modal-dialog sidebar-xl">
+        <div class="modal-content p-0">
+            <form id="frmExpense" data-parsley-validate="true">
+                <div class="modal-header align-items-center mb-1">
+                    <h5 class="modal-title">Add expense type</h5>
+                    <div class="todo-item-action d-flex align-items-center justify-content-between ml-auto">
+                        <span class="todo-item-favorite cursor-pointer mr-75" data-dismiss="modal" aria-label="Close"><i class="icons8-black-multiply"></i></span>
+                    </div>
+                </div>
+                <div class="modal-body flex-grow-1 pb-sm-0 pb-3">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="action-tags">
+                                <div class="form-group">
+                                    <label class="form-label">Expenses Type<span class="text-danger">*</span></label>
+                                    <select class="form-control input" id="ExpenseType" name="ExpenseType" required></select>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Amount <span class="text-danger">*</span></label>
+                                    <input type="text" id="ExpenseAmount" name="ExpenseAmount" required class="new-todo-item-title form-control input decimal-format" placeholder="Enter amount" autocomplete="off" />
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-10">
+                                        <label class="form-label" style="font-size: 14px;">Add expense type to all budgets</label>
+                                    </div>
+                                    <div class="col-sm-2">
+                                        <div class="action-tags">
+                                            <div class="custom-control custom-switch custom-control-inline">
+                                                <input type="checkbox" class="custom-control-input" id="isAllBudget" value="1">
+                                                <label class="custom-control-label" for="isAllBudget"></label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <div class="row" style="width: 100%;">
+                        <div class="col-sm-6">
+                            <input type="hidden" name="ID" id="ID" class="input" />
+                            <button type="submit" class="btn btn-primary mr-1 btn-block">Add expense type</button>
+                        </div>
+                        <div class="col-sm-6">
+                            <button type="button" class="btn btn-block btn-outline-secondary" data-dismiss="modal">
+                                Cancel
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+@section scripts{
+    @Scripts.Render("~/Budget-JS")
+}

@@ -1,0 +1,126 @@
+﻿/*body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}*/
+
+/* Set padding to keep content from hitting the edges */
+/*.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}*/
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+/*.dl-horizontal dt {
+    white-space: normal;
+}*/
+
+/* Set width on the form input elements since they're 100% wide by default */
+/*input,
+select,
+textarea {
+    max-width: 280px;
+}*/
+.paddingTopBottom10 {
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
+}
+
+.contentRed {
+    color: red;
+    font-size: 16px;
+}
+
+
+.card {
+    margin-bottom: 10px;
+}
+
+.nav-tabs .nav-link.active {
+    color: white;
+    background-color: #7573b6;
+}
+
+.table thead th {
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 21px;
+    text-transform: uppercase;
+    color: #333133;
+}
+
+h5, h3 {
+    color: black;
+    font-weight: bold;
+}
+
+.card-biller {
+    padding: 24px;
+    margin-left: 20px;
+    width: 258px;
+    height: auto;
+    background: #FFFFFF;
+    box-shadow: 1px 2px 13px rgb(51 49 51 / 5%), 0px 2px 7px rgb(51 49 51 / 7%) !important;
+    border-radius: 12px;
+}
+
+.biller-body-p {
+    font-weight: 400;
+    color: #545254;
+    margin: 8px 0px;
+}
+
+.oval-purple {
+    background: #7573B6;
+    border-radius: 4px;
+    padding: 4px
+}
+
+.divBoxPayment {
+    text-align: center;
+    width: 156px;
+    height: 80px;
+    background: white;
+    border: 1px solid #D1D3D4;
+    box-sizing: border-box;
+    border-radius: 12px;
+}
+
+.divBoxPaymentactive {
+    background: #F3F3F7;
+    border: 1px solid #7573B6;
+}
+
+.contentTertiary {
+    color: #979597 !important;
+    font-size: 16px;
+}
+
+.contentValue {
+    color: black;
+    font-weight: normal;
+    font-size: 16px
+}
+
+.contentSecondary {
+    font-size: 12px;
+    line-height: 18px;
+    color: #545254;
+}
+/* width */
+.ScrollDesign::-webkit-scrollbar {
+    width: 5px;
+}
+
+/* Track */
+.ScrollDesign::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey;
+    border-radius: 5px;
+}
+
+/* Handle */
+.ScrollDesign::-webkit-scrollbar-thumb {
+    background: #7573B6;
+    border-radius: 5px;
+}

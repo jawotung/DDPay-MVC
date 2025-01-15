@@ -1,0 +1,393 @@
+﻿@{
+    ViewBag.Title = "Transaction";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section css{
+    @Styles.Render("~/Transaction-CSS")
+    <link href="~/Content/app-assets/css/pages/app-ecommerce.css" rel="stylesheet" />
+    <style>
+        .contentSecondary {
+            color: #545254;
+            line-height: 35px;
+            font-weight: 400;
+            font-size: 14px;
+        }
+        .contentSecondaryV2 {
+            color: #545254;
+            font-weight: bold;
+            font-size: 18px;
+        }
+    </style>
+}
+<div class="app-content content ecommerce-application">
+    <div class="content-overlay"></div>
+    <div class="header-navbar-shadow"></div>
+    <div class="content-wrapper container-xxl p-0">
+        <div class="content-header row">
+            <div class="col-12">
+                <p style="font-size:24px;font-weight:700!important;line-height:36px;color:#25215E">@ViewBag.Title</p>
+            </div>
+        </div>
+    </div>
+    <div class="content-wrapper container-xxl p-0">
+        <div class="content-header row">
+            <div class="row" style="padding-top:10px;height:55px;margin-right:0px;padding-left:20px;width:100%">
+                <div class="col-sm-2" style="padding: 0px;padding-left:0px">
+                    <button type="button" class="btn btn-primary btn-block" id="btnAdd" style="border-radius:12px;background-color:#7573B6!important">
+                        <i class="b-size icons8-white-plus" data-size="16"></i> Add Transaction
+                    </button>
+                </div>
+            </div>
+            <!-- Start Search -->
+            <section id="basic-horizontal-layouts" class="HaveBillData" style="width:100%">
+                <div class="row">
+                    <div class="col-md-12 col-12" style="padding-left: 30px;">
+                        <div class="card" style="margin-bottom: 10px;">
+                            <div class="row" style="padding-top:10px;height:55px;margin-right:0px">
+                                <div class="col-sm-7">
+                                    <div class="input-group mb-2">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text" style="background-color: transparent;height:100%"><i class="icons8-black-search"></i></span>
+                                        </div>
+                                        <input type="text" class="form-control" placeholder="Search" aria-label="Search..." aria-describedby="basic-addon-search1" style="border:none;height:100%">
+                                    </div>
+                                </div>
+                                <div class="col-sm-5" style="padding: 0px;padding-left:0px">
+                                    <div class="row">
+                                        <div class="col-sm-5">
+                                            <div class="form-group">
+                                                <input type="text" id="FStartDate" name="FStartDate" class="new-todo-item-title form-control input pickadate" autocomplete="off" />
+                                            </div>
+                                        </div>
+                                        ~
+                                        <div class="col-sm-5">
+                                            <div class="form-group">
+                                                <input type="text" id="FEndDate" name="FEndDate" class="new-todo-item-title form-control input pickadate" autocomplete="off" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- End Search -->
+            <div class="content-header-left col-md-10 col-12 mb-2">
+                <div class="row">
+                    <div class="col-lg-6 col-sm-6 col-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="row" style="width:100%">
+                                    <div class="col-sm-6">
+                                        <div class="action-tags">
+                                            <div class="form-group">
+                                                <label class="form-label contentTertiary">Starting balance</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="action-tags text-right">
+                                            <div class="form-group">
+                                                <span id="StartBalance" class="contentSecondaryV2">P 200,000</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row" style="width:100%">
+                                    <div class="col-sm-6">
+                                        <div class="action-tags">
+                                            <div class="form-group">
+                                                <label class="form-label contentTertiary">Ending balance</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="action-tags text-right">
+                                            <div class="form-group">
+                                                <span id="EndBalance" class="contentSecondaryV2">P 198,000</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr />
+                                <div class="row" style="width:100%">
+                                    <div class="col-sm-6 offset-6">
+                                        <div class="action-tags text-right">
+                                            <div class="form-group">
+                                                <span id="EndBalance" class="contentRed">P 2,000</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6 col-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <div style="align-items: center;text-align: center;width: 100%;">
+                                    <img src="~/Content/app-assets/fonts/Sel-Icons/DDP Icons/Illustrations/no upcoming bills.png" width="130" height="75" />
+                                    <h2 class="font-weight-bolder mb-0">0.00</h2>
+                                    <p class="card-text">Total spent for June</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6 col-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <div style="align-items: center;text-align: center;width: 100%;">
+                                    <img src="~/Content/app-assets/fonts/Sel-Icons/DDP Icons/Illustrations/balance profit.png" width="130" height="75" />
+                                    <h2 class="font-weight-bolder mb-0">8,000</h2>
+                                    <p class="card-text">than last month</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="content-body">
+
+            <div id="place-order" class="list-view product-checkout" style="margin-top:0px">
+                <!-- Checkout Place Order Left starts -->
+                @*<div class="row">*@
+                <div class="checkout-items ScrollDesign" style="height: 650px;overflow-x: hidden;overflow-y:auto">
+                    <!-- Start List -->
+                    <div id="divTransactionList">
+                    </div>
+                    <!-- End List -->
+                </div>
+                <div class="checkout-options">
+                    <div class="card">
+                        <div class="card-body ScrollDesign" style="height: 650px;overflow-x: hidden;overflow-y:auto">
+                            <h4 class="card-title" style="padding-top:10px;font-weight: 700;font-size: 32px;line-height: 48px;margin:0px" id="sdExpenseType"></h4>
+                            <br />
+                            <button type="button" id="btnSDEdit" class="btn btn-outline-primary" style="border-radius: 12px;"><i class="b-size icons8-black-edit"></i></button>
+                            <button type="button" id="btnSDDelete" class="btn btn-outline-danger" style="border-radius: 12px;"><i class="b-size icons8-black-waste"></i></button>
+                            <hr />
+                            <div class="price-details">
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="action-tags">
+                                            <div class="form-group">
+                                                <label class="form-label contentTertiary">Amount</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="action-tags">
+                                            <div class="form-group">
+                                                <span id="sdAmount" class="contentValue"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr />
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="action-tags">
+                                            <div class="form-group">
+                                                <label class="form-label contentTertiary">Date of transaction</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="action-tags">
+                                            <div class="form-group">
+                                                <span id="sdTransactionDate" class="contentValue"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr />
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="action-tags">
+                                            <div class="form-group">
+                                                <label class="form-label contentTertiary">Note</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="action-tags">
+                                            <div class="form-group">
+                                                <span id="sdNote" class="contentValue"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr />
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="action-tags">
+                                            <div class="form-group">
+                                                <label class="form-label contentTertiary">Document</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="action-tags">
+                                            <div class="form-group">
+                                                <span id="sdDocument" class="contentValue"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr />
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="action-tags">
+                                            <div class="form-group">
+                                                <label class="form-label contentTertiary">Frequency</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="action-tags">
+                                            <div class="form-group">
+                                                <span id="sdFrequency" class="contentValue"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr />
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="action-tags">
+                                            <div class="form-group">
+                                                <label class="form-label contentTertiary">Start Date</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="action-tags">
+                                            <div class="form-group">
+                                                <span id="sdStartDate" class="contentValue"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr />
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="action-tags">
+                                            <div class="form-group">
+                                                <label class="form-label contentTertiary">End Date</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="action-tags">
+                                            <div class="form-group">
+                                                <span id="sdEndDate" class="contentValue"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Checkout Place Order Right ends -->
+                </div>
+                @*</div>*@
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal modal-slide-in sidebar-todo-modal fade" id="mdlTransaction">
+    <div class="modal-dialog sidebar-xl">
+        <div class="modal-content p-0">
+            <form id="frmTransaction" data-parsley-validate="true">
+                <div class="modal-header align-items-center mb-1">
+                    <h5 class="modal-title">Add Transaction</h5>
+                    <div class="todo-item-action d-flex align-items-center justify-content-between ml-auto">
+                        <span class="todo-item-favorite cursor-pointer mr-75" data-dismiss="modal" aria-label="Close"><i class="icons8-black-multiply"></i></span>
+                    </div>
+                </div>
+                <div class="modal-body flex-grow-1 pb-sm-0 pb-3">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="action-tags">
+                                <div class="form-group">
+                                    <label class="form-label">Transaction type <span class="text-danger">*</span></label>
+                                    <select class="form-control input" id="ExpenseType" name="ExpenseType" required></select>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Amount <span class="text-danger">*</span></label>
+                                    <input type="text" id="Amount" name="Amount" required class="new-todo-item-title form-control input decimal-format" placeholder="Enter amount" autocomplete="off" />
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Date of transaction</label>
+                                    <input type="text" id="TransactionDate" name="TransactionDate" class="new-todo-item-title form-control input pickadate" autocomplete="off" />
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Note<span class="text-danger">*</span></label>
+                                    <textarea class="form-control" id="Note" name="Note" rows="2" placeholder="Textarea" required></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Document</label>
+                                    <input type="file" id="Document" name="Document" class="new-todo-item-title form-control input" placeholder="Upload attachment" />
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-10">
+                                        <label class="form-label" style="font-weight: 700; font-size: 16px;color: #333133;">Recurring options</label>
+                                    </div>
+                                    <div class="col-sm-2">
+                                        <div class="action-tags">
+                                            <div class="custom-control custom-switch custom-control-inline">
+                                                <input type="checkbox" class="custom-control-input" id="RecurringOptions">
+                                                <label class="custom-control-label" for="RecurringOptions"></label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group Recurring">
+                                    <label class="form-label">Frequency</label>
+                                    <select class="form-control input txtRecurring" id="Frequency" name="Frequency">
+                                        <option selected>Daily</option>
+                                        <option>Monthly</option>
+                                        <option>Yearly</option>
+                                    </select>
+                                </div>
+                                <div class="row Recurring">
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label class="form-label">Start date</label>
+                                            <input type="text" id="StartDate" name="StartDate" class="new-todo-item-title form-control input pickadate txtRecurring" autocomplete="off" />
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label class="form-label">End date</label>
+                                            <input type="text" id="EndDate" name="EndDate" class="new-todo-item-title form-control input pickadate txtRecurring" autocomplete="off" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <div class="row" style="width: 100%;">
+                        <div class="col-sm-6">
+                            <input type="hidden" name="ID" id="ID" class="input" />
+                            <button type="submit" class="btn btn-primary mr-1 btn-block">Add Transaction</button>
+                        </div>
+                        <div class="col-sm-6">
+                            <button type="button" class="btn btn-block btn-outline-secondary" data-dismiss="modal">
+                                Cancel
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+@section scripts{
+    @Scripts.Render("~/Transaction-JS")
+}

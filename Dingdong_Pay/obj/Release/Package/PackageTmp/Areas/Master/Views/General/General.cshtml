@@ -1,0 +1,135 @@
+﻿@{
+    ViewBag.Title = "Drop-Down Master";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section css{
+    @Styles.Render("~/General-CSS")
+}
+<section id="basic-horizontal-layouts">
+    <div class="row match-height">
+        <div class="col-md-6 col-12">
+            <div class="card h-100">
+                <div class="card-header">
+                    <h4 class="card-title">Type</h4>
+                </div>
+                <div class="card-content">
+                    <div class="card-body">
+                        <div class="row d-flex justify-content-center text-center">
+                            <div class="col-sm-12">
+                                <div class="row">
+                                    <div class="col-sm-4 m-b-5 ReadAndWrite">
+                                        <button type="button" id="btnEditType" class="btn btn-info btn-block ReadAndWrite" disabled><span class="fa fa-edit"></span><span class="btnLabel"> Edit</span></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="table-responsive" style="padding-top:10px;">
+                            <table id="tblType" class="table table-hover" style="width:100%"></table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 col-12">
+            <div class="card  h-100">
+                <div class="card-header">
+                    <h4 class="card-title">Value</h4>
+                </div>
+                <div class="card-content">
+                    <div class="card-body">
+                        <div class="row d-flex justify-content-center text-center">
+                            <div class="col-sm-12">
+                                <div class="row">
+                                    <div class="col-sm-4 m-b-5 ReadAndWrite">
+                                        <button type="button" id="btnNewGeneral" class="btn btn-primary btn-block ReadAndWrite"><span class="fa fa-plus"></span><span class="btnLabel"> Add</span></button>
+                                    </div>
+                                    <div class="col-sm-4 m-b-5 ReadAndWrite">
+                                        <button type="button" id="btnEditGeneral" class="btn btn-info btn-block ReadAndWrite" disabled><span class="fa fa-edit"></span><span class="btnLabel"> Edit</span></button>
+                                    </div>
+                                    <div class="col-sm-4 m-b-5 DeleteEnabled">
+                                        <button type="button" id="btnDeleteGeneral" class="btn btn-danger btn-block DeleteEnabled" disabled><span class="fa fa-trash"></span><span class="btnLabel"> Delete</span></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="table-responsive">
+                            <table id="tblGeneral" class="table dataTable no-footer dtr-column table-hover"></table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<div class="modal fade " id="mdlGeneral" role="dialog" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog modal-lg" id="" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="mdlTitle"> Drop-down Form</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form data-parsley-validate="true" id="frmGeneral">
+                <div class="modal-body">
+                    <div class="row ">
+                        <div class="col-md-6 col-12">
+                            <div class="mb-1">
+                                <label class="form-label" for="first-name-column">Type</label>
+                                <select id="TypeID" name="TypeID" class="form-control input onChangeParsley" data-parsley-required data-parsley-errors-container="#err-Type"></select>
+                            </div>
+                            <div id="err-TypeID"></div>
+                        </div>
+                        <div class="col-md-6 col-12">
+                            <div class="mb-1">
+                                <label class="form-label" for="first-name-column">Value</label>
+                                <input type="text" id="Value" name="Value" class="form-control input" placeholder="Value" data-parsley-required data-parsley-maxlength="255" data-parsley-errors-container="#err-Value" autocomplete="off">
+                            </div>
+                            <div id="err-Value"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <input type="hidden" name="ID" class="input" id="GeneralID" value="0" />
+                    <button type="submit" class="btn btn-primary ReadAndWrite" id="btnSaveGeneral"> <span class="fa fa-save"></span> <span class="btnLabel"> Save</span></button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal"><span class="fa fa-times"></span> Close</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade " id="mdlType" role="dialog" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog modal-lg" id="" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="mdlTitle"> Drop-down Form</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form data-parsley-validate="true" id="frmType">
+                <div class="modal-body">
+                    <div class="row ">
+                        <div class="col-md-6 col-12">
+                            <div class="mb-1">
+                                <label class="form-label" for="first-name-column">Type</label>
+                                <input type="text" id="Type" name="Type" class="form-control input" placeholder="Type" data-parsley-required data-parsley-maxlength="255" data-parsley-errors-container="#err-Type" autocomplete="off">
+                            </div>
+                            <div id="err-Type"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <input type="hidden" name="ID" class="input" id="TypeMainID" value="0" />
+                    <button type="submit" class="btn btn-primary ReadAndWrite" id="btnSaveType"> <span class="fa fa-save"></span> <span class="btnLabel"> Save</span></button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal"><span class="fa fa-times"></span> Close</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+@section scripts{
+    @Scripts.Render("~/General-JS")
+}

@@ -1,0 +1,849 @@
+﻿@{
+    ViewBag.Title = "Bills";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section css{
+    @Styles.Render("~/Bills-CSS")
+    <style>
+        .nav-tabs .nav-link.active {
+            color: white;
+            background-color: #7573b6;
+        }
+
+        .table thead th {
+            font-weight: bold;
+            font-size: 14px;
+            line-height: 21px;
+            text-transform: uppercase;
+            color: #333133;
+        }
+
+        h5, h3 {
+            color: black;
+            font-weight: bold;
+        }
+
+        .card-biller {
+            padding: 24px;
+            margin-left: 20px;
+            width: 258px;
+            height: auto;
+            background: #FFFFFF;
+            box-shadow: 1px 2px 13px rgb(51 49 51 / 5%), 0px 2px 7px rgb(51 49 51 / 7%) !important;
+            border-radius: 12px;
+        }
+
+        .biller-body-p {
+            font-weight: 400;
+            color: #545254;
+            margin: 8px 0px;
+        }
+
+        .oval-purple {
+            background: #7573B6;
+            border-radius: 4px;
+            padding: 4px
+        }
+        .divBoxPayment {
+            text-align: center;
+            width: 156px;
+            height: 80px;
+            background: white;
+            border: 1px solid #D1D3D4;
+            box-sizing: border-box;
+            border-radius: 12px;
+        }
+        .divBoxPaymentactive {
+            background: #F3F3F7;
+            border: 1px solid #7573B6;
+        }
+    </style>
+}
+<div class="row HaveBillData" style="display: none;">
+    <div class="col-12">
+        <p style="font-size:14px;font-weight:bold!important;color:#333133">Total bills</p>
+    </div>
+</div>
+<div class="row HaveBillData" style="display: none;">
+    <div class="col-lg-3 col-sm-6 col-12">
+        <div class="card">
+            <div class="card-header">
+                <div style="align-items: center;text-align: center;width: 100%;">
+                    <h2 class="font-weight-bolder mb-0 text-danger">20,000</h2>
+                    <p class="card-text">Overdue amount</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3 col-sm-6 col-12">
+        <div class="card">
+            <div class="card-header">
+                <div style="align-items: center;text-align: center;width: 100%;">
+                    <h2 class="font-weight-bolder mb-0">0.00</h2>
+                    <p class="card-text">This month</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3 col-sm-6 col-12">
+        <div class="card">
+            <div class="card-header">
+                <div style="align-items: center;text-align: center;width: 100%;">
+                    <h2 class="font-weight-bolder mb-0">8,000</h2>
+                    <p class="card-text">Next month</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3 col-sm-6 col-12">
+        <div class="card">
+            <div class="card-header">
+                <div style="align-items: center;text-align: center;width: 100%;">
+                    <h2 class="font-weight-bolder mb-0">6</h2>
+                    <p class="card-text">Linked biller</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<ul class="nav nav-tabs HaveBillData" role="tablist" style="margin-bottom: 0px;display: none;">
+    <li class="nav-item" style="margin-right: 10px; width: 182px; height: 42px; border-top-left-radius: 12px; border-top-right-radius: 12px; background: #fff; ">
+        <a class="nav-link active tabsStatus" id="All-tab" data-toggle="tab" href="#all-tab" data-status="10" aria-controls="home" role="tab" aria-selected="true"><i class="icons8-black-list"></i>All</a>
+    </li>
+    <li class="nav-item" style="margin-right: 10px; width: 182px; height: 42px; border-top-left-radius: 12px; border-top-right-radius: 12px; background: #fff;">
+        <a class="nav-link tabsStatus" id="Overdue-tab" data-toggle="tab" href="#all-tab" data-status="1" aria-controls="profile" role="tab" aria-selected="false" data-divID="divOverdue"><i class="icons8-black-flag-2"></i>Overdue</a>
+    </li>
+    <li class="nav-item" style="margin-right: 10px; width: 182px; height: 42px; border-top-left-radius: 12px; border-top-right-radius: 12px; background: #fff;">
+        <a class="nav-link tabsStatus" id="Recurring-tab" data-toggle="tab" href="#all-tab" data-status="0" aria-controls="profile" role="tab" aria-selected="false" data-divID="divRecurring"><i class="icons8-black-available-updates"></i>Recurring</a>
+    </li>
+    <li class="nav-item" style="margin-right: 10px; width: 182px; height: 42px; border-top-left-radius: 12px; border-top-right-radius: 12px; background: #fff;">
+        <a class="nav-link tabsStatus" id="Paid-tab" data-toggle="tab" href="#all-tab" data-status="2" aria-controls="about" role="tab" aria-selected="false" data-divID="divPaid"><i class="icons8-black-approval"></i>Paid</a>
+    </li>
+    <li class="nav-item" style="margin-right: 10px; width: 182px; height: 42px; border-top-left-radius: 12px; border-top-right-radius: 12px; background: #fff;">
+        <a class="nav-link" id="Billers-tab" data-toggle="tab" href="#billers-tab" aria-controls="about" role="tab" aria-selected="false" data-divID="divBillers" data-status="0"><i class="icons8-black-organization"></i>Billers</a>
+    </li>
+</ul>
+<section id="basic-horizontal-layouts" class="HaveBillData" style="display: none;">
+    <div class="row match-height" style="height:700px">
+        <div class="col-md-12 col-12" style="padding-right:0px">
+            <div class="card" style="height: 475.547px;">
+                <div class="card-header" style="background-color: #f5f6f6;margin: 0px!important;padding: 0px;">
+                </div>
+                <div class="card-content">
+                    <div class="card-body">
+                        <div class="tab-content">
+                            <div class="tab-pane active" id="all-tab" aria-labelledby="All-tab" role="tabpanel">
+                                <div class="row" style="padding-top:10px;height:45px">
+                                    <div class="col-sm-5">
+                                        <div class="row" style="padding-top:0px;">
+                                            <div class="col-sm-12">
+                                                <div class="input-group mb-2">
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text"><i class="icons8-black-search"></i></span>
+                                                    </div>
+                                                    <input type="text" class="form-control" placeholder="Search" aria-label="Search..." aria-describedby="basic-addon-search1">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-5">
+                                        <div class="row" style="padding-top:0px;">
+                                            <div class="col-sm-6" style="padding: 0px;">
+                                                <div class="input-group mb-2">
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text" style="border:none">From</span>
+                                                    </div>
+                                                    <input type="text" class="form-control pickadate">
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6" style="padding: 0px;">
+                                                <div class="input-group mb-2">
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text" style="border:none">To</span>
+                                                    </div>
+                                                    <input type="text" class="form-control pickadate">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <button type="button" class="btn btn-icon btn-flat-defult" style="height:25px;">
+                                        <i class="icons8-black-funnel"></i>
+                                    </button>
+                                    <button type="button" class="btn btn-icon btn-defult" style="height:25px;">
+                                        <i class="icons8-black-menu-vertical"></i>
+                                    </button>
+                                    <div class="col-sm-1" style="padding: 0px;padding-left:5px">
+                                        <button type="button" class="btn btn-primary btn-block" id="btnAddBill">
+                                            Add bill
+                                        </button>
+                                    </div>
+                                </div>
+                                <table id="tblAll" class="table table-hover" style="width:100%"></table>
+                            </div>
+                            <div class="tab-pane" id="paid-tab" aria-labelledby="Paid-tab" role="tabpanel">
+                                <div class="card card-transaction">
+                                    <div class="card-body" id="divPaid"></div>
+                                </div>
+                            </div>
+                            <div class="tab-pane" id="overdue-tab" aria-labelledby="Overdue-tab" role="tabpanel">
+                                <div class="card card-transaction">
+                                    <div class="card-body" id="divOverdue"></div>
+                                </div>
+                            </div>
+                            <div class="tab-pane" id="billers-tab" aria-labelledby="Billers-tab" role="tabpanel">
+                                <div class="row" style="padding-top:10px;height:45px" id="divBillerList">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="NoBillData" style="display: none;">
+    <div class="row match-height" style="height:600px">
+        <div class="col-md-12 col-12" style="padding-right:0px">
+            <div class="card" style="height: 475.547px;">
+                <div class="card-header" style="background-color: #f5f6f6;margin: 0px!important;padding: 0px;">
+                </div>
+                <div class="card-content">
+                    <div class="card-body">
+                        <div class="row" style="text-align:center">
+                            <div class="col-12">
+                                <img src="~/Content/app-assets/fonts/Sel-Icons/DDP Icons/Illustrations/no bills added.png" style="width: 500px;padding-top: 50px;" />
+                            </div>
+                            <div class="col-12" style="font-weight: 700; font-size: 32px; line-height: 48px;color:black;padding-top:20px">
+                                <p>No bills added yet :(</p>
+                            </div>
+                            <div class="col-12">
+                                <p>Add your first bill and get a head start on your bills now!</p>
+                            </div>
+                            <div class="col-sm-2 offset-5">
+                                <button type="button" id="btnNoBillsAdd" class="btn btn-primary mr-1 btn-block">Add bill</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="modal modal-slide-in sidebar-todo-modal fade" id="mdlAddBill">
+    <div class="modal-dialog sidebar-xl" id="mdlSideBarSize">
+        <div class="modal-content p-0">
+            <form data-parsley-validate="true" id="frmBill">
+                <div class="modal-header align-items-center mb-1">
+                    <h5 class="modal-title">Add Bill</h5>
+                    <div class="todo-item-action d-flex align-items-center justify-content-between ml-auto">
+                        <span class="todo-item-favorite cursor-pointer mr-75" data-dismiss="modal" aria-label="Close"><i class="icons8-black-multiply"></i></span>
+                    </div>
+                </div>
+                <div class="modal-body flex-grow-1 pb-sm-0 pb-3">
+                    <div class="row">
+                        <div class="col-sm-12" id="col6Left">
+                            <div class="action-tags">
+                                <div class="form-group">
+                                    <label class="form-label">Biller<span class="text-danger">*</span></label>
+                                    <select class="form-control input select2-manual" data-name="Biller" id="Biller" name="Biller" required>
+                                        <option value="" selected hidden></option>
+                                        <option value="Meralco">Meralco</option>
+                                        <option value="Globe">Globe</option>
+                                        <option value="PLDT">PLDT</option>
+                                        <option value="Maynilad">Maynilad</option>
+                                    </select>
+                                </div>
+                                <p class="mt-2" id="pAddManual" style="margin: 0px!important;margin-top: 0px;font-size: 12px;">
+                                    <span style="color: #979597;">Not in our biller list? </span>
+                                    <a style="color: #7573b6;" id="btnAddManual"><span>&nbsp;Add manually.</span></a>
+                                </p>
+                                <div class="form-group ManualBill">
+                                    <label class="form-label">Bill title<span class="text-danger">*</span></label>
+                                    <input type="text" id="BillTitle" name="BillTitle" required class="new-todo-item-title form-control input" placeholder="Enter bill title" autocomplete="off" />
+                                </div>
+                                <div class="form-group ManualBill">
+                                    <label class="form-label">Customer account number<span class="text-danger">*</span></label>
+                                    <input type="text" id="CAN" name="CAN" required class="new-todo-item-title form-control input" placeholder="Enter customer account number" autocomplete="off" />
+                                </div>
+                                <div class="form-group ManualBill">
+                                    <label class="form-label">Amount<span class="text-danger">*</span></label>
+                                    <input type="text" id="Amount" name="Amount" required class="new-todo-item-title form-control input" placeholder="Enter amount" autocomplete="off" />
+                                </div>
+                                <div class="form-group ManualBill">
+                                    <label class="form-label">Expense type<span class="text-danger">*</span></label>
+                                    <select class="form-control input" id="ExpenseType" name="ExpenseType" required>
+                                        <option value="Utility" selected>Utility</option>
+                                    </select>
+                                </div>
+                                <div class="form-group ManualBill">
+                                    <label class="form-label">Purpose<span class="text-danger">*</span></label>
+                                    <input type="text" id="Purpose" name="Purpose" required class="new-todo-item-title form-control input" placeholder="Select purpose" autocomplete="off" />
+                                </div>
+                                <div class="form-group ManualBill">
+                                    <label class="form-label">Note<span class="text-danger">*</span></label>
+                                    <textarea class="form-control" id="Note" name="Note" rows="2" placeholder="Textarea" required></textarea>
+                                </div>
+                                <div class="form-group ManualBill">
+                                    <label class="form-label">Document</label>
+                                    <input type="file" id="Document" name="Document" class="new-todo-item-title form-control input" placeholder="Upload attachment" />
+                                </div>
+                                <div class="form-group ManualBill">
+                                    <label class="form-label">Due date<span class="text-danger">*</span></label>
+                                    <input type="text" id="DueDate" name="DueDate" required class="new-todo-item-title form-control input pickadate" autocomplete="off" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="action-tags">
+                                <div class="row ManualBill">
+                                    <div class="col-sm-10">
+                                        <label class="form-label" style="font-weight: 700; font-size: 16px;color: #333133;">Recurring options</label>
+                                    </div>
+                                    <div class="col-sm-2">
+                                        <div class="action-tags">
+                                            <div class="custom-control custom-switch custom-control-inline">
+                                                <input type="checkbox" class="custom-control-input" id="RecurringOptions">
+                                                <label class="custom-control-label" for="RecurringOptions"></label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group Recurring">
+                                    <label class="form-label">Frequency</label>
+                                    <select class="form-control input txtRecurring" id="Frequency" name="Frequency">
+                                        <option selected>Daily</option>
+                                        <option>Monthly</option>
+                                        <option>Yearly</option>
+                                    </select>
+                                </div>
+                                <div class="row Recurring">
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label class="form-label">Start date</label>
+                                            <input type="text" id="StartDate" name="StartDate" class="new-todo-item-title form-control input pickadate txtRecurring" autocomplete="off" />
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label class="form-label">End date</label>
+                                            <input type="text" id="EndDate" name="EndDate" class="new-todo-item-title form-control input pickadate txtRecurring" autocomplete="off" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row ManualBill">
+                                    <div class="col-sm-10">
+                                        <label class="form-label" style="font-weight: 700; font-size: 16px;color: #333133;">Reminder options</label>
+                                    </div>
+                                    <div class="col-sm-2">
+                                        <div class="action-tags">
+                                            <div class="custom-control custom-switch custom-control-inline">
+                                                <input type="checkbox" class="custom-control-input" id="ReminderOptions">
+                                                <label class="custom-control-label" for="ReminderOptions"></label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row Reminder">
+                                    <div class="col-sm-12" style="height: 20px;">
+                                        <div class="form-group">
+                                            <label class="form-label">Remind me before due date</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="Reminder" id="divReminderNotification">
+                                    <div class="row Reminder ReminderNotification">
+                                        <div class="col-sm-4">
+                                            <div class="form-group">
+                                                <select class="form-control input txtReminder" name="ReminderType[]">
+                                                    <option value="Email" selected>Email</option>
+                                                    <option value="SMS">SMS</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <div class="form-group">
+                                                <input type="text" name="ReminderNo[]" maxlength="2" class="new-todo-item-title form-control input Number-Only txtReminder" autocomplete="off" />
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <div class="form-group">
+                                                <select class="form-control input txtReminder" name="ReminderMode[]">
+                                                    <option value="" hidden></option>
+                                                    <option value="hrs">hrs</option>
+                                                    <option value="days" selected>days</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-1">
+                                            <div class="form-group" style="margin-top: 10px;margin-bottom: 0px;">
+                                                <span class="b-size cursor-pointer icons8-black-multiply btnRemoveNotification" data-size="16" style="display:none"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <a id="btnAddNotification" class="Reminder" style="color: #7573B6;font-size: 14px;font-weight:bold"><i class="b-size icons8-black-plus"></i><span>Add notification</span></a>
+                                <div class="row LinkBiller">
+                                    <div class="col-sm-10">
+                                        <label class="form-label" style="font-weight: 700; font-size: 16px;color: #333133;">Link account</label>
+                                    </div>
+                                    <div class="col-sm-2">
+                                        <div class="action-tags">
+                                            <div class="custom-control custom-switch custom-control-inline">
+                                                <input type="checkbox" class="custom-control-input" id="LinkBiller">
+                                                <label class="custom-control-label" for="LinkBiller"></label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p class="LinkAccount" style="color:#545254">Your bill amount will be updated according to the billing statement</p>
+                                <div class="form-group LinkAccount">
+                                    <label class="form-label">Account holder’s name</label>
+                                    <input type="text" id="AccountHolder" name="AccountHolder" maxlength="100" class="new-todo-item-title form-control input txtLinkAccount" autocomplete="off" />
+                                </div>
+                                <div class="row LinkAccount">
+                                    <div class="col-sm-10">
+                                        <label class="form-label" style="color: #333133;">Auto-pay from my account</label>
+                                    </div>
+                                    <div class="col-sm-2">
+                                        <div class="action-tags">
+                                            <div class="custom-control custom-switch custom-control-inline">
+                                                <input type="checkbox" class="custom-control-input" id="AutoPayAccount">
+                                                <label class="custom-control-label" for="AutoPayAccount"></label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p class="LinkAccount" style="color:#7573B6">Add a payment account to enable auto-pay</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer ManualBill">
+                        <div class="row" style="width: 100%;">
+                            <div class="col-sm-6">
+                                <input type="hidden" id="ID" name="ID" class="input" />
+                                <button type="submit" class="btn btn-primary mr-1 btn-block" id="btnSave">Add</button>
+                            </div>
+                            <div class="col-sm-6">
+                                <button type="button" class="btn btn-block btn-outline-secondary" data-dismiss="modal">
+                                    Cancel
+                                </button>
+                            </div>
+                        </div>
+                        <div class="row foredit" style="width: 100%; padding-top: 10px">
+                            <div class="col-sm-4 offset-4">
+                                <button type="button" class="btn btn-outline-danger mr-1 btn-block " id="btnDelete"><i class="icons8-black-waste"></i> Delete bill</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<div class="modal modal-slide-in sidebar-todo-modal fade" id="mdlAccount">
+    <div class="modal-dialog sidebar-xl">
+        <div class="modal-content p-0">
+            <form data-parsley-validate="true">
+                <div class="modal-header align-items-center mb-1">
+                    <h5 class="modal-title">Add Payment Account</h5>
+                    <div class="todo-item-action d-flex align-items-center justify-content-between ml-auto">
+                        <span class="todo-item-favorite cursor-pointer mr-75" data-dismiss="modal" aria-label="Close"><i class="icons8-black-multiply"></i></span>
+                    </div>
+                </div>
+                <div class="modal-body flex-grow-1 pb-sm-0 pb-3">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <label class="form-label" style="font-weight: 700; font-size: 16px;color: #333133;">Choose a payment option</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="divBoxPayment">
+                                <i class="b-size cursor-pointer icons8-purple-bank-cards" data-size="36" style="color: #25215E;"></i><br />
+                                <label class="form-label" style="font-weight: bold; font-size: 12px;color: #25215E;">Credit/Debit Card</label>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="divBoxPayment">
+                                <i class="b-size cursor-pointer icons8-purple-google" data-size="36" style="color: #25215E;"></i><br />
+                                <label class="form-label" style="font-weight: bold; font-size: 12px;color: #25215E;">Gcash</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <label class="form-label" style="font-weight: 700; font-size: 16px;color: #333133;">Information</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="action-tags">
+                                <div class="form-group">
+                                    <label class="form-label">Cardholder’s name <span class="text-danger">*</span></label>
+                                    <input type="text" id="Cardholder" name="Cardholder" required class="new-todo-item-title form-control input" placeholder="Enter cardholder’s name" autocomplete="off" />
+                                </div>
+                                <div class="form-group">
+                                    <div class="d-flex justify-content-between">
+                                        <label class="form-label">Enter credit/Debit card number<span class="text-danger">*</span></label>
+                                    </div>
+                                    <div class="input-group input-group-merge">
+                                        <input type="text" id="CardNo" name="CardNo" required class="new-todo-item-title form-control input" placeholder="Enter credit/Debit card number" autocomplete="off" />
+                                        <div class="input-group-append">
+                                            <span class="input-group-text">
+                                                <i class="icons8-purple-visa" style="color:#25215E"></i>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="action-tags">
+                                <div class="form-group">
+                                    <label class="form-label">Expirtation date <span class="text-danger">*</span></label>
+                                    <input type="text" id="ExpirationDate" name="ExpirationDate" required class="new-todo-item-title form-control input" placeholder="MM/YYYY" autocomplete="off" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="action-tags">
+                                <div class="form-group">
+                                    <label class="form-label">CVC/CVV<span class="text-danger">*</span></label>
+                                    <input type="text" id="CVCCVV" name="CVCCVV" required class="new-todo-item-title form-control input" placeholder="123" autocomplete="off" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <div class="row" style="width: 100%;">
+                        <div class="col-sm-6">
+                            <button type="button" id="btnAddAccount" class="btn btn-outline-primary mr-1 btn-block" data-dismiss="modal">Add account</button>
+                        </div>
+                        <div class="col-sm-6">
+                            <button type="button" class="btn btn-block btn-outline-secondary" data-dismiss="modal">
+                                Cancel
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<div class="modal modal-slide-in sidebar-todo-modal fade" id="mdlMarkAsPaid">
+    <div class="modal-dialog sidebar-xl">
+        <div class="modal-content p-0">
+            <form data-parsley-validate="true" id="frmMarkAsPaid">
+                <div class="modal-header align-items-center mb-1">
+                    <h5 class="modal-title">Mark as paid</h5>
+                    <div class="todo-item-action d-flex align-items-center justify-content-between ml-auto">
+                        <span class="todo-item-favorite cursor-pointer mr-75" data-dismiss="modal" aria-label="Close"><i class="icons8-black-multiply"></i></span>
+                    </div>
+                </div>
+                <div class="modal-body flex-grow-1 pb-sm-0 pb-3">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="action-tags">
+                                <div class="form-group">
+                                    <label class="form-label">Reference number<span class="text-danger">*</span></label>
+                                    <input type="text" id="ReferenceNo" name="ReferenceNo" required class="new-todo-item-title form-control input" placeholder="Enter reference number" autocomplete="off" />
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Date of payment<span class="text-danger">*</span></label>
+                                    <input type="text" id="PaidDate" name="PaidDate" required class="new-todo-item-title form-control input pickadate" autocomplete="off" />
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Payment Method<span class="text-danger">*</span></label>
+                                    <select class="form-control input" id="PaymentMethod" name="PaymentMethod" required>
+                                        <option value="" selected>Select payment method</option>
+                                        <option value="COD">COD</option>
+                                        <option value="Bank">Bank</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Document</label>
+                                    <input type="file" id="PaymentDocument" name="PaymentDocument" class="new-todo-item-title form-control input" placeholder="Upload attachment" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <div class="row" style="width: 100%;">
+                        <div class="col-sm-6">
+                            <input type="hidden" id="MarkAsPaidID" name="ID" class="input" />
+                            <button type="submit" class="btn btn-outline-primary mr-1 btn-block">Mark as paid</button>
+                        </div>
+                        <div class="col-sm-6">
+                            <button type="button" class="btn btn-block btn-outline-secondary" data-dismiss="modal">
+                                Cancel
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<div class="modal modal-slide-in sidebar-todo-modal fade" id="mdlView">
+    <div class="modal-dialog sidebar-xl">
+        <div class="modal-content p-0">
+            <div class="modal-header align-items-center mb-1">
+                <h5 class="modal-title" id="mdlPaymentTitle"></h5>
+                <div class="todo-item-action d-flex align-items-center justify-content-between ml-auto">
+                    <p style="margin-bottom: 0px; padding-right: 10px;">Created on <span id="lblCreateDate"></span></p>
+                    <span class="todo-item-favorite cursor-pointer mr-75" data-dismiss="modal" aria-label="Close"><i class="icons8-black-multiply"></i></span>
+                </div>
+            </div>
+            <div class="modal-body flex-grow-1 pb-sm-0 pb-3">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="action-tags">
+                            <div class="form-group">
+                                <label class="form-label">Status</label>
+                                <div id="lblStatus"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="action-tags">
+                            <div class="form-group">
+                                <label class="form-label">Last payment</label>
+                                <h5 id="lblLastPayment"></h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="action-tags">
+                            <div class="form-group">
+                                <label class="form-label">Biller</label>
+                                <h5 id="lblBiller"></h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="action-tags">
+                            <div class="form-group">
+                                <label class="form-label">Bill title</label>
+                                <h5 id="lblBillTitle"></h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="action-tags">
+                            <div class="form-group">
+                                <label class="form-label">Customer account number</label>
+                                <h5 id="lblCAN"></h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="action-tags">
+                            <div class="form-group">
+                                <label class="form-label">Expense type</label>
+                                <h5 id="lblExpenseType"></h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="action-tags">
+                            <div class="form-group">
+                                <label class="form-label">Purpose</label>
+                                <h5 id="lblPurpose"></h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="action-tags">
+                            <div class="form-group">
+                                <label class="form-label">Note</label>
+                                <h5 id="lblNote"></h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="action-tags">
+                            <div class="form-group">
+                                <label class="form-label">Document</label>
+                                <h5 id="lblDocument"></h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="action-tags">
+                            <div class="form-group">
+                                <label class="form-label">Due date</label>
+                                <h5 id="lblDueDate"></h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="action-tags">
+                            <div class="form-group">
+                                <label class="form-label">Amount</label>
+                                <h5 id="lblAmount"></h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="action-tags">
+                            <h4 style="font-weight:bold;color: black;">Recurring options</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="action-tags">
+                            <div class="form-group">
+                                <label class="form-label">Frequency</label>
+                                <h5 id="lblFrequency"></h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="action-tags">
+                            <div class="form-group">
+                                <label class="form-label">Start Date</label>
+                                <h5 id="lblStartDate"></h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="action-tags">
+                            <div class="form-group">
+                                <label class="form-label">End Date</label>
+                                <h5 id="lblEndDate"></h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="action-tags">
+                            <h4 style="font-weight:bold;color: black;">Remind options</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="action-tags">
+                            <div class="form-group">
+                                <label class="form-label">Remind me before due date</label>
+                                <h5 id="lblReminderType">Email me at 3 days before</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div class="row" style="width: 100%;">
+                    <div class="col-sm-6">
+                        <button type="button" class="btn btn-primary mr-1 btn-block" id="btnEdit"><i class="icons8-black-edit"></i> Edit bill</button>
+                    </div>
+                    <div class="col-sm-6">
+                        <button type="button" class="btn btn-outline-primary mr-1 btn-block" id="btnMarkAsPaid"><i class="icons8-black-in-progress"></i> Mark as paid</button>
+                    </div>
+                </div>
+                <div class="row" style="width: 100%;">
+                    <div class="col-sm-6 offset-sm-3">
+                        <button type="button" class="btn btn-block btn-outline-secondary" data-dismiss="modal">
+                            Cancel
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal modal-slide-in sidebar-todo-modal fade" id="mdlPayment">
+    <div class="modal-dialog sidebar-xl" style="width:30%">
+        <div class="modal-content p-0">
+            <div class="modal-header align-items-center mb-1">
+                <h5 class="modal-title" id="mdlPaymentTitle"></h5>
+                <div class="todo-item-action d-flex align-items-center justify-content-between ml-auto">
+                    <span class="todo-item-favorite cursor-pointer mr-75" data-dismiss="modal" aria-label="Close"><i class="icons8-black-multiply"></i></span>
+                </div>
+            </div>
+            <div class="modal-body flex-grow-1 pb-sm-0 pb-3">
+                <div class="card-transaction" id="PaymentBody">
+                    <div class="transaction-item">
+                        <div class="media">
+                            <div class="avatar bg-default rounded">
+                                <div class="avatar-content">
+                                    <i class="fa fa-home"></i>
+                                </div>
+                            </div>
+                            <div class="media-body">
+                                <h6 class="transaction-title font-weight-bolder">Meralco</h6>
+                                <small style="font-size: 12px;"><b>Acc no.:</b> <span style="color:#979597">01234567890</span></small><br />
+                                <small style="font-size: 12px;"><b>Bill title:</b> <span style="color:#979597">For condo in QC</span></small><br />
+                                <small style="font-size: 12px;"><b>Due date:</b>  <span style="color:#979597">March 15, 2022</span></small><br />
+                            </div>
+                        </div>
+                        <div style="text-align:right"><span style="font-weight:bold">P 20,000</span><br /><span style="font-size: 12px; color:#979597">Service fee </span><span style="font-weight:bold">P 25</span></div>
+                    </div>
+                </div>
+                <div class="row" style="font-size: 16px;border-top: 1px solid #545254;">
+                    <div class="offset-3 col-4" style="text-align:right">
+                        <span style="color:#979597">Subtotal</span>
+                    </div>
+                    <div class="offset-1 col-4" style="text-align:right">
+                        <span>P <span id="Subtotal"></span></span>
+                    </div>
+                </div>
+                <div class="row" style="font-size: 16px;">
+                    <div class="offset-3 col-4" style="text-align:right">
+                        <span style="color:#979597">Service fee</span>
+                    </div>
+                    <div class="offset-1 col-4" style="text-align:right">
+                        <span>P <span id="ServiceFee"></span></span>
+                    </div>
+                </div>
+                <div class="row" style="font-size: 16px;border-bottom: 1px solid #545254;">
+                    <div class="offset-3 col-4" style="text-align:right">
+                        <span style="color:#979597">Total</span>
+                    </div>
+                    <div class="offset-1 col-4" style="text-align:right">
+                        <b>P <span id="TotalBill"></span></b>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div class="row" style="width: 100%;">
+                    <div class="col-sm-6">
+                        <button type="button" class="btn btn-primary mr-1 btn-block" id="btnPayNow">Pay now</button>
+                    </div>
+                    <div class="col-sm-6">
+                        <button type="button" class="btn btn-block btn-outline-secondary" data-dismiss="modal">
+                            Cancel
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@section scripts{
+    @Scripts.Render("~/Bills-JS")
+}

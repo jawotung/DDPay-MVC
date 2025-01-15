@@ -1,0 +1,21 @@
+// Font paths
+// -------------------------
+
+@font-face {
+  font-family: "DDP Icons - Grey-a1cb1fd62b";
+  src: url("../fonts/DDP Icons - Grey-a1cb1fd62b.eot");
+  src: url("../fonts/DDP Icons - Grey-a1cb1fd62b.eot?#iefix") format("embedded-opentype"),
+  url("../fonts/DDP Icons - Grey-a1cb1fd62b.woff2") format("woff2"),
+  url("../fonts/DDP Icons - Grey-a1cb1fd62b.woff") format("woff"),
+  url("../fonts/DDP Icons - Grey-a1cb1fd62b.ttf") format("truetype"),
+  url("../fonts/DDP Icons - Grey-a1cb1fd62b.svg#font") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: "DDP Icons - Grey-a1cb1fd62b";
+    src: url("../fonts/DDP Icons - Grey-a1cb1fd62b.svg#DDP Icons - Grey-a1cb1fd62b") format("svg");
+  }
+}

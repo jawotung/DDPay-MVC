@@ -1,0 +1,179 @@
+// Icons
+// -------------------------
+
+.icons8-green-calendar:before,
+.icons8-green-notification:before,
+.icons8-green-forward:before,
+.icons8-green-back:before,
+.icons8-green-expand-arrow:before,
+.icons8-green-collapse-arrow:before,
+.icons8-green-done:before,
+.icons8-green-settings:before,
+.icons8-green-technical-support:before,
+.icons8-green-male-user:before,
+.icons8-green-pie-chart:before,
+.icons8-green-ledger:before,
+.icons8-green-wallet:before,
+.icons8-green-bill:before,
+.icons8-green-dashboard-layout:before,
+.icons8-green-google:before,
+.icons8-green-bank-cards:before,
+.icons8-green-lock:before,
+.icons8-green-multiply:before,
+.icons8-green-add:before,
+.icons8-green-facebook-f:before,
+.icons8-green-mail:before,
+.icons8-green-padlock:before,
+.icons8-green-visa:before,
+.icons8-green-hide:before,
+.icons8-green-eye:before,
+.icons8-green-search:before,
+.icons8-green-plus:before,
+.icons8-green-upload:before,
+.icons8-green-list:before,
+.icons8-green-download:before,
+.icons8-green-flag-2:before,
+.icons8-green-available-updates:before,
+.icons8-green-organization:before,
+.icons8-green-approval:before,
+.icons8-green-funnel:before,
+.icons8-green-menu-vertical:before,
+.icons8-green-edit:before,
+.icons8-green-in-progress:before,
+.icons8-green-ok:before,
+.icons8-green-file:before,
+.icons8-green-waste:before,
+[data-icons8]:before {
+  @include icons8-font;
+}
+
+[data-icons8]:before {
+  content: attr(data-icons8);
+}
+
+.icons8-green-calendar:before {
+  content: $icons8-var-calendar;
+}
+.icons8-green-notification:before {
+  content: $icons8-var-notification;
+}
+.icons8-green-forward:before {
+  content: $icons8-var-forward;
+}
+.icons8-green-back:before {
+  content: $icons8-var-back;
+}
+.icons8-green-expand-arrow:before {
+  content: $icons8-var-expand-arrow;
+}
+.icons8-green-collapse-arrow:before {
+  content: $icons8-var-collapse-arrow;
+}
+.icons8-green-done:before {
+  content: $icons8-var-done;
+}
+.icons8-green-settings:before {
+  content: $icons8-var-settings;
+}
+.icons8-green-technical-support:before {
+  content: $icons8-var-technical-support;
+}
+.icons8-green-male-user:before {
+  content: $icons8-var-male-user;
+}
+.icons8-green-pie-chart:before {
+  content: $icons8-var-pie-chart;
+}
+.icons8-green-ledger:before {
+  content: $icons8-var-ledger;
+}
+.icons8-green-wallet:before {
+  content: $icons8-var-wallet;
+}
+.icons8-green-bill:before {
+  content: $icons8-var-bill;
+}
+.icons8-green-dashboard-layout:before {
+  content: $icons8-var-dashboard-layout;
+}
+.icons8-green-google:before {
+  content: $icons8-var-google;
+}
+.icons8-green-bank-cards:before {
+  content: $icons8-var-bank-cards;
+}
+.icons8-green-lock:before {
+  content: $icons8-var-lock;
+}
+.icons8-green-multiply:before {
+  content: $icons8-var-multiply;
+}
+.icons8-green-add:before {
+  content: $icons8-var-add;
+}
+.icons8-green-facebook-f:before {
+  content: $icons8-var-facebook-f;
+}
+.icons8-green-mail:before {
+  content: $icons8-var-mail;
+}
+.icons8-green-padlock:before {
+  content: $icons8-var-padlock;
+}
+.icons8-green-visa:before {
+  content: $icons8-var-visa;
+}
+.icons8-green-hide:before {
+  content: $icons8-var-hide;
+}
+.icons8-green-eye:before {
+  content: $icons8-var-eye;
+}
+.icons8-green-search:before {
+  content: $icons8-var-search;
+}
+.icons8-green-plus:before {
+  content: $icons8-var-plus;
+}
+.icons8-green-upload:before {
+  content: $icons8-var-upload;
+}
+.icons8-green-list:before {
+  content: $icons8-var-list;
+}
+.icons8-green-download:before {
+  content: $icons8-var-download;
+}
+.icons8-green-flag-2:before {
+  content: $icons8-var-flag-2;
+}
+.icons8-green-available-updates:before {
+  content: $icons8-var-available-updates;
+}
+.icons8-green-organization:before {
+  content: $icons8-var-organization;
+}
+.icons8-green-approval:before {
+  content: $icons8-var-approval;
+}
+.icons8-green-funnel:before {
+  content: $icons8-var-funnel;
+}
+.icons8-green-menu-vertical:before {
+  content: $icons8-var-menu-vertical;
+}
+.icons8-green-edit:before {
+  content: $icons8-var-edit;
+}
+.icons8-green-in-progress:before {
+  content: $icons8-var-in-progress;
+}
+.icons8-green-ok:before {
+  content: $icons8-var-ok;
+}
+.icons8-green-file:before {
+  content: $icons8-var-file;
+}
+.icons8-green-waste:before {
+  content: $icons8-var-waste;
+}

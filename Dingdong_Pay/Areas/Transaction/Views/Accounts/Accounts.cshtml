@@ -1,0 +1,126 @@
+﻿@{
+    ViewBag.Title = "Accounts";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section css{
+    @Styles.Render("~/Accounts-CSS")
+    <link href="~/Content/app-assets/fonts/Sel-Icons/Expense-Type-Icons/css/styles.css" rel="stylesheet" />
+}
+
+<section id="basic-horizontal-layouts">
+    <div class="row match-height">
+        <div class="col-md-4 col-12" style="padding-right:0px">
+            <div class="card" style="height: 475.547px;">
+                <div class="card-header">
+                    <h4 class="card-title">ACCOUNTS</h4>
+                </div>
+                <div class="card-content">
+                    <div class="card-body">
+                        <div class="card card-transaction">
+                            <div class="card-body" id="divAccount"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="div-bottom">
+                    <button type="button" class="btn btn-icon btn-md rounded-circle btn-primary waves-effect" id="btnAdd">
+                        <i class="fa fa-plus"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-8 col-md-6 col-12">
+            <div class="card card-transaction h-100">
+                <div class="card-header">
+                    <h4 class="card-title">TRANSACTIONS</h4>
+                </div>
+                <div class="card-body">
+                    <div class="transaction-item">
+                        <div class="media">
+                            <div class="avatar bg-light-primary rounded">
+                                <div class="avatar-content">
+                                    <i class="avatar-icon font-medium-3"></i>
+                                </div>
+                            </div>
+                            <div class="media-body">
+                                <h6 class="transaction-title" id="TitleTransaction"></h6>
+                                <small id="DetailsTransaction"></small>
+                            </div>
+                        </div>
+                        <div class="font-weight-bolder text-success" id="AmountTransaction"></div>
+                    </div>
+                    <div class="table-responsive">
+                        <table id="tblTransaction" class="table dataTable no-footer dtr-column table-hover"></table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<div class="modal fade " id="mdlForm" role="dialog" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog modal-lg" id="" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="mdlTitle"> Accounts Form</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form data-parsley-validate="true" id="frmAccounts">
+                <div class="modal-body">
+                    <div class="row ">
+                        <div class="col-md-6 col-12">
+                            <div class="mb-1">
+                                <label class="form-label" for="Types"><i class="fa fa-money-bill"></i></label>
+                                <input type="hidden" id="ID" name="ID" class="form-control input">
+                                <select id="Types" name="Types" class="form-control input" required data-parsley-errors-container="#err-Types"></select>
+                            </div>
+                            <div id="err-Types"></div>
+                        </div>
+                        <div class="col-md-6 col-12">
+                            <div class="mb-1">
+                                <label class="form-label" for="Bank"><i class="fa fa-university"></i></label>
+                                <select id="Bank" name="Bank" class="form-control input" required data-parsley-errors-container="#err-Bank"></select>
+                            </div>
+                            <div id="err-Bank"></div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 col-12">
+                            <div class="mb-1">
+                                <label class="form-label" for="Account"><i class="fa fa-address-card"></i></label>
+                                <input type="text" id="Account" name="Account" class="form-control input" placeholder="Account" required data-parsley-errors-container="#err-Account" data-parsley-maxlength="200" maxlength="200" autocomplete="off">
+                            </div>
+                            <div id="err-Account"></div>
+                        </div>
+                        <div class="col-md-6 col-12">
+                            <div class="mb-1">
+                                <label class="form-label" for="Currency"><i class="fas fa-money-check-alt"></i></label>
+                                <select id="Currency" name="Currency" class="form-control input" required data-parsley-errors-container="#err-Currency"></select>
+                            </div>
+                            <div id="err-Currency"></div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 col-12">
+                            <div class="mb-1">
+                                <label class="form-label" for="Amount"><i class="fa fa-money-bill-wave"></i></label>
+                                <input type="text" id="Amount" name="Amount" class="form-control input decimal-format" placeholder="Amount" required data-parsley-errors-container="#err-Amount" data-parsley-maxlength="200" maxlength="200" autocomplete="off">
+                            </div>
+                            <div id="err-Amount"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary" id="btnSaveForm"><span class="fa fa-save"></span> <span class="btnLabel"> Save</span></button>
+                    <button type="button" class="btn btn-danger" id="btnDelete"><span class="fa fa-trash"></span> <span class="btnLabel"> Delete</span></button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal"><span class="fa fa-times"></span> Close</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section scripts{
+    @Scripts.Render("~/Accounts-JS")
+}

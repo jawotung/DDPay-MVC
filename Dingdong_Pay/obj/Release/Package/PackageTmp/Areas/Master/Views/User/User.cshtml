@@ -1,0 +1,157 @@
+﻿@{
+    ViewBag.Title = "User Master";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section css{
+    @Styles.Render("~/User-CSS")
+}
+
+<div class="row" id="basic-table">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header">
+                <h4 class="card-title"></h4>
+            </div>
+            <div class="card-content" style="padding: 5px 5px 5px 5px;">
+                <div class="row d-flex justify-content-center text-center">
+                    <div class="col-sm-12">
+                        <div class="row">
+                            <div class="col-sm-1">
+                            </div>
+                            <div class="col-sm-2 m-b-5 ReadAndWrite">
+                                <button type="button" id="btnAdd" class="btn btn-primary btn-block ReadAndWrite"><span class="fa fa-plus"></span><span class="btnLabel"> Add</span></button>
+                            </div>
+                            <div class="col-sm-2 m-b-5 ReadAndWrite">
+                                <button type="button" id="btnEdit" class="btn btn-info btn-block ReadAndWrite" disabled><span class="fa fa-edit"></span><span class="btnLabel"> Edit</span></button>
+                            </div>
+                            <div class="col-sm-2 m-b-5 DeleteEnabled">
+                                <button type="button" id="btnDelete" class="btn btn-danger btn-block DeleteEnabled" disabled><span class="fa fa-trash"></span><span class="btnLabel"> Delete</span></button>
+                            </div>
+                            <div class="col-sm-2 m-b-5">
+                                <button type="button" id="btnUserAccess" class="btn btn-success btn-block" disabled><span class="fa fa-list"></span><span class="btnLabel"> Access</span></button>
+                            </div>
+                            <div class="col-sm-2 m-b-5">
+                                <button type="button" id="btnPrint" class="btn btn-warning btn-block btnPrint"><span class="fa fa-download"></span><span class="btnLabel"> Download Excel</span></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="table-responsive" style="padding-top:10px;">
+                    <table id="tblUser" class="table table-hover" style="width:100%"></table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade " id="mdlUser" role="dialog" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog modal-lg" id="" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="mdlTitle"> User Form</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form data-parsley-validate="true" id="frmUser">
+                <div class="modal-body">
+                    <div class="row ">
+                        <div class="col-md-6 col-12">
+                            <div class="mb-1">
+                                <label class="form-label" for="first-name-column">Username</label>
+                                <input type="hidden" id="ID" name="ID" class="form-control input">
+                                <input type="text" id="Username" name="Username" class="form-control input" placeholder="Username" required data-parsley-required data-parsley-maxlength="20" maxlength="20" data-parsley-errors-container="#err-Username" autocomplete="off">
+                            </div>
+                            <div id="err-Username"></div>
+                        </div>
+                        <div class="col-md-6 col-12">
+                            <div class="mb-1">
+                                <label class="form-label" for="first-name-column">Password</label>
+                                <input type="password" id="Password" name="Password" class="form-control input" placeholder="Password" required data-parsley-errors-container="#err-Password" autocomplete="off">
+                            </div>
+                            <div id="err-Password"></div>
+                        </div>
+                    </div>
+                    <div class="row ">
+                        <div class="col-md-6 col-12">
+                            <div class="mb-1">
+                                <label class="form-label" for="FirstName">First Name</label>
+                                <input type="text" id="FirstName" name="FirstName" class="form-control input" placeholder="First Name" required data-parsley-required data-parsley-maxlength="200" maxlength="200" data-parsley-errors-container="#err-FirstName" autocomplete="off">
+                            </div>
+                            <div id="err-FirstName"></div>
+                        </div>
+                        <div class="col-md-6 col-12">
+                            <div class="mb-1">
+                                <label class="form-label" for="LastName">Last Name</label>
+                                <input type="text" id="LastName" name="LastName" class="form-control input" placeholder="Last Name" required data-parsley-errors-container="#err-LastName" data-parsley-maxlength="200" maxlength="200" autocomplete="off">
+                            </div>
+                            <div id="err-LastName"></div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 col-12">
+                            <div class="mb-1">
+                                <label class="form-label" for="LastName">Middle Name</label>
+                                <input type="text" id="MiddleName" name="MiddleName" class="form-control input" placeholder="Middle Name" required data-parsley-errors-container="#err-MiddleName" data-parsley-maxlength="200" maxlength="200" autocomplete="off">
+                            </div>
+                            <div id="err-MiddleName"></div>
+                        </div>
+                        <div class="col-md-6 col-12">
+                            <div class="mb-1">
+                                <label class="form-label" for="Email">Email</label>
+                                <input type="email" id="Email" name="Email" class="form-control input" placeholder="Email" data-parsley-type="email" data-parsley-errors-container="#err-Email" data-parsley-maxlength="200" maxlength="200" autocomplete="off">
+                            </div>
+                            <div id="err-Email"></div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 col-12">
+                            <div class="mb-1">
+                                <label class="form-label" for="LastName">Position</label>
+                                <input type="text" id="Position" name="Position" class="form-control input" placeholder="Position" required data-parsley-errors-container="#err-Position" data-parsley-maxlength="200" maxlength="200" autocomplete="off">
+                            </div>
+                            <div id="err-Position"></div>
+                        </div>
+                        <div class="col-md-6 col-12">
+                            <div class="mb-1">
+                                <label class="form-label" for="Role">Role</label>
+                                <select id="Role" name="Role" class="form-control input" required data-parsley-errors-container="#err-Role" autocomplete="off">
+                                    <option value="">--Please Select--</option>
+                                    <option value="Administrator">Administrator</option>
+                                    <option value="User">User</option>
+                                </select>
+                            </div>
+                            <div id="err-Role"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary ReadAndWrite" id="btnSaveUser"> <span class="fa fa-save"></span> <span class="btnLabel"> Save</span></button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal"><span class="fa fa-times"></span> Close</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<div class="modal fade " id="mdlUserAccess" tabindex="-1" role="dialog" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog modal-xl" id="" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title"><span class="fa fa-list"></span> User Access</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body" id="mdlBodyUserAccess">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-sm btn-primary ReadAndWrite" id="btnSaveUserAccess"> <span class="fa fa-save"></span> Save</button>
+                <button type="button" class="btn btn-sm btn-secondary" data-dismiss="modal"><span class="fa fa-times"></span> Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts{
+    @Scripts.Render("~/User-JS")
+}

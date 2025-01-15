@@ -1,0 +1,149 @@
+﻿@{
+    ViewBag.Title = "Expenses";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section css{
+    @Styles.Render("~/Expenses-CSS")
+}
+
+<section id="basic-horizontal-layouts">
+    <div class="row match-height">
+        <div class="col-md-6 col-12" style="padding-right:0px">
+            <div class="card" style="height: 475.547px;">
+                <div class="card-header">
+                    <ul class="nav nav-tabs" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link active" id="Monthly-tab" data-toggle="tab" href="#montlhy-tab" aria-controls="home" role="tab" aria-selected="true">MONTHLY</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="Daily-tab" data-toggle="tab" href="#daily-tab" aria-controls="profile" role="tab" aria-selected="false">DAILY</a>
+                        </li>
+                    </ul>
+                    <div>
+                        <span id="nav-year-previous" class="navYear CursorPointer" data-action="previous"><i class="fa fa-chevron-left"></i></span>
+                        <b class="value" id="Year"></b>
+                        <span id="nav-year-next" class="navYear CursorPointer" data-action="next"><i class="fa fa-chevron-right"></i></span>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <div class="card-body">
+                        <div class="tab-content">
+                            <div class="tab-pane active" id="montlhy-tab" aria-labelledby="Monthly-tab" role="tabpanel">
+                                <div class="card card-transaction">
+                                    <div class="card-body" id="divMonthly"></div>
+                                </div>
+                            </div>
+                            <div class="tab-pane" id="daily-tab" aria-labelledby="Daily-tab" role="tabpanel">
+                                <div class="row">
+                                    <div class="col-6">
+                                        <span id="nav-month-previous" class="navMonth CursorPointer" data-action="previous"><i class="fa fa-chevron-left"></i></span>
+                                        <b class="value" id="Month"></b>
+                                        <span id="nav-month-next" class="navMonth CursorPointer" data-action="next"><i class="fa fa-chevron-right"></i></span>
+                                    </div>
+                                    <div class="col-6" style="text-align: right;">
+                                    </div>
+                                </div>
+                                <div class="divider">
+                                    <div class="divider-text"><i class="fa fa-list-alt"></i></div>
+                                </div>
+                                <div class="card card-transaction">
+                                    <div class="card-body" id="divDaily"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="div-bottom">
+                            <button type="button" class="btn btn-icon btn-md rounded-circle btn-primary waves-effect" id="btnAdd">
+                                <i class="fa fa-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 col-12">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="card-title">Details</h4>
+                </div>
+                <div class="card-content">
+                    <div class="card-body">
+                        <div class="card card-transaction">
+                            <div class="card-body" id="divDetail"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<div class="modal fade " id="mdlForm" role="dialog" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog modal-lg" id="" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="mdlTitle"> Expenses Form</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form data-parsley-validate="true" id="frmExpenses">
+                <div class="modal-body">
+                    <div class="row ">
+                        <div class="col-md-6 col-12">
+                            <div class="mb-1">
+                                <label class="form-label" for="Expenses">Expenses</label>
+                                <input type="hidden" id="ID" name="ID" class="form-control input">
+                                <select id="Expenses" name="Expenses" class="form-control input" required data-parsley-errors-container="#err-Expenses"></select>
+                            </div>
+                            <div id="err-Expenses"></div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 col-12">
+                            <div class="mb-1">
+                                <label class="form-label" for="Accounts"><i class="fa fa-address-card"></i></label>
+                                <select id="Account" name="Account" class="form-control input" required data-parsley-errors-container="#err-Accounts"></select>
+                            </div>
+                            <div id="err-Accounts"></div>
+                        </div>
+
+                        <div class="col-md-6 col-12">
+                            <div class="mb-1">
+                                <label class="form-label" for="Amount"><i class="fa fa-money-bill-wave"></i></label>
+                                <input type="text" id="Amount" name="Amount" class="form-control input decimal-format" placeholder="Amount" required data-parsley-errors-container="#err-Amount" data-parsley-maxlength="200" maxlength="200" autocomplete="off">
+                            </div>
+                            <div id="err-Amount"></div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 col-12">
+                            <div class="mb-1">
+                                <label class="form-label" for="InputDate"><i class="feather icon-calendar"></i></label>
+                                <input type="text" id="InputDate" name="InputDate" class="form-control input pickadate" placeholder="InputDate" required data-parsley-errors-container="#err-InputDate" data-parsley-maxlength="200" maxlength="200" autocomplete="off">
+                            </div>
+                            <div id="err-InputDate"></div>
+                        </div>
+                    </div>
+                    <div class="row ">
+                        <div class="col-md-12 col-12">
+                            <div class="mb-1">
+                                <label class="form-label" for="first-name-column"><i class="fa fa-comment-dots"></i></label>
+                                <textarea class="form-control input" id="Notes" name="Notes" rows="3" placeholder="Notes" required data-parsley-required data-parsley-maxlength="20" maxlength="20" data-parsley-errors-container="#err-Notes" autocomplete="off"></textarea>
+                            </div>
+                            <div id="err-Note"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary ReadAndWrite" id="btnSaveForm"><span class="fa fa-save"></span> <span class="btnLabel"> Save</span></button>
+                    <button type="button" class="btn btn-danger" id="btnDelete"><span class="fa fa-trash"></span> <span class="btnLabel"> Delete</span></button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal"><span class="fa fa-times"></span> Close</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section scripts{
+    @Scripts.Render("~/Expenses-JS")
+}

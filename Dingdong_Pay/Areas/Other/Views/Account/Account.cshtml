@@ -1,0 +1,446 @@
+﻿@{
+    ViewBag.Title = "Account";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section css{
+    @Styles.Render("~/Account-CSS")
+    <link href="~/Content/app-assets/css/pages/app-ecommerce.css" rel="stylesheet" />
+}
+<div class="app-content content ecommerce-application">
+    <div class="content-overlay"></div>
+    <div class="header-navbar-shadow"></div>
+    <div class="content-wrapper container-xxl p-0">
+        <div class="content-header row">
+            <div class="col-12">
+                <p style="font-size:24px;font-weight:700!important;line-height:36px;color:#25215E">@ViewBag.Title</p>
+            </div>
+        </div>
+    </div>
+    <div class="content-wrapper container-xxl p-0">
+        <div class="content-header row">
+            <div class="content-header-left col-md-9 col-12 mb-2">
+            </div>
+        </div>
+        <div class="content-body">
+            <ul class="nav nav-pills" role="tablist" style="background-color:white;">
+                <li class="nav-item">
+                    <a style="font-size: 16px;padding: 15px;" class="nav-link d-flex align-items-center active" id="account-tab" data-toggle="tab" href="#account" aria-controls="account" role="tab" aria-selected="true">
+                        <span class="d-none d-sm-block"><i class="icons8-black-male-user"></i>User profile</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a style="font-size: 16px;padding: 15px;" class="nav-link d-flex align-items-center" id="paymentaccount-tab" data-toggle="tab" href="#paymentaccount" aria-controls="information" role="tab" aria-selected="false">
+                        <span class="d-none d-sm-block"><i class="icons8-black-bank-cards"></i> Payment accounts</span>
+                    </a>
+                </li>
+            </ul>
+            <div class="tab-content">
+                <div class="tab-pane active" id="account" aria-labelledby="account-tab" role="tabpanel">
+                    <div class="row">
+                        <div class="col-lg-3 col-12 order-2 order-lg-1">
+                        </div>
+                        <div class="col-lg-6 col-12 order-1 order-lg-2">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-sm-3">
+                                            <div class="avatar mr-1">
+                                                <img src="~/Content/app-assets/images/portrait/small/avatar-s-11.jpg" alt="avatar img" height="120" width="120">
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-2" style="height: 100px;width: 100px;position: relative;">
+                                            <a class="mb-0 text-primary" style="top: 50%;position: absolute;top: 50%;transform: translateY(-50%);">Change photo</a>
+                                        </div>
+
+                                        <div class="col-sm-2" style="height: 100px;width: 100px;position: relative;">
+                                            <a class="mb-0 text-danger" style="top: 50%;position: absolute;top: 50%;transform: translateY(-50%);">Remove</a>
+                                        </div>
+                                    </div>
+
+                                    <div class="row" style="padding-top:40px;" id="divNameLabel">
+                                        <div class="col-sm-5">
+                                            <div class="action-tags">
+                                                <div class="form-group">
+                                                    <label class="form-label contentTertiary">Full Name</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="action-tags">
+                                                <div class="form-group">
+                                                    <span id="lblFullName" class="contentValue"></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-1">
+                                            <button type="button" class="btn btn-icon btn-flat-primary  waves-effect btnEditAccount" data-parent="Name" style="padding:0px"><i class="b-size icons8-black-edit" data-size="16"></i></button>
+                                        </div>
+                                    </div>
+                                    <form data-parsley-validate="true" id="frmName" data-parent="Name">
+                                        <div class="row" style="padding-top:40px;display:none" id="divNameForm">
+                                            <div class="col-md-6 col-12">
+                                                <div class="mb-1">
+                                                    <label class="form-label contentSecondary">First Name</label>
+                                                    <input type="text" id="FirstName" name="FirstName" class="form-control input" placeholder="First Name" required data-parsley-required data-parsley-maxlength="50" maxlength="50" data-parsley-errors-container="#err-FirstName" autocomplete="off">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 col-12">
+                                                <div class="mb-1">
+                                                    <label class="form-label contentSecondary">Middle Name</label>
+                                                    <input type="text" id="MiddleName" name="MiddleName" class="form-control input" placeholder="Middle Name" data-parsley-errors-container="#err-MiddleName" data-parsley-maxlength="50" maxlength="50" autocomplete="off">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12 col-12">
+                                                <div class="mb-1">
+                                                    <label class="form-label contentSecondary">Last Name</label>
+                                                    <input type="text" id="LastName" name="LastName" class="form-control input" placeholder="Last Name" required data-parsley-errors-container="#err-LastName" data-parsley-maxlength="50" maxlength="50" autocomplete="off">
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-5">
+                                                <input type="hidden" id="ID" name="ID" class="input">
+                                                <input type="hidden" name="Status" value="1">
+                                                <button type="submit" class="btn btn-primary ReadAndWrite">Save changes</button>
+                                                <button type="button" class="btn btn-outline-primary btnCancel" data-parent="Name">Cancel</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                    <hr />
+                                    <div class="row" id="divUsernameLabel">
+                                        <div class="col-sm-5">
+                                            <div class="action-tags">
+                                                <div class="form-group">
+                                                    <label class="form-label contentTertiary">Username</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="action-tags">
+                                                <div class="form-group">
+                                                    <span id="lblUsername" class="contentValue"></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-1">
+                                            <button type="button" class="btn btn-icon btn-flat-primary  waves-effect btnEditAccount" data-parent="Username" style="padding:0px"><i class="b-size icons8-black-edit" data-size="16"></i></button>
+                                        </div>
+                                    </div>
+                                    <form data-parsley-validate="true" id="frmUsername" data-parent="Username">
+                                        <div class="row" id="divUsernameForm" style="display:none">
+                                            <div class="col-md-12 col-12">
+                                                <div class="mb-1">
+                                                    <label class="form-label contentSecondary">Username</label>
+                                                    <input type="text" id="Username" name="Username" class="form-control input" placeholder="Username" required data-parsley-errors-container="#err-Username" data-parsley-maxlength="50" maxlength="50" autocomplete="off">
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-5">
+                                                <input type="hidden" name="Status" value="2">
+                                                <button type="submit" class="btn btn-primary ReadAndWrite">Save changes</button>
+                                                <button type="button" class="btn btn-outline-primary btnCancel" data-parent="Username">Cancel</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                    <hr />
+                                    <div class="row" id="divEmailLabel">
+                                        <div class="col-sm-5">
+                                            <div class="action-tags">
+                                                <div class="form-group">
+                                                    <label class="form-label contentTertiary">Email</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="action-tags">
+                                                <div class="form-group">
+                                                    <span id="lblEmail" class="contentValue"></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-1">
+                                            <button type="button" class="btn btn-icon btn-flat-primary  waves-effect btnEditAccount" data-parent="Email" style="padding:0px"><i class="b-size icons8-black-edit" data-size="16"></i></button>
+                                        </div>
+                                    </div>
+                                    <form data-parsley-validate="true" id="frmEmail" data-parent="Email">
+                                        <div class="row" id="divEmailForm" style="display:none">
+                                            <div class="col-md-12 col-12">
+                                                <div class="mb-1">
+                                                    <label class="form-label contentSecondary">Email</label>
+                                                    <input type="text" id="Email" name="Email" class="form-control input" placeholder="Email" required data-parsley-type="email" data-parsley-errors-container="#err-Email" data-parsley-maxlength="100" maxlength="100" autocomplete="off">
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-5">
+                                                <input type="hidden" name="Status" value="3">
+                                                <button type="submit" class="btn btn-primary ReadAndWrite">Save changes</button>
+                                                <button type="button" class="btn btn-outline-primary btnCancel" data-parent="Email">Cancel</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                    <hr />
+                                    <div class="row" id="divMobileNoLabel">
+                                        <div class="col-sm-5">
+                                            <div class="action-tags">
+                                                <div class="form-group">
+                                                    <label class="form-label contentTertiary">Mobile Number</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="action-tags">
+                                                <div class="form-group">
+                                                    <span id="lblMobileNo" class="contentValue"></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-1">
+                                            <button type="button" class="btn btn-icon btn-flat-primary  waves-effect btnEditAccount" data-parent="MobileNo" style="padding:0px"><i class="b-size icons8-black-edit" data-size="16"></i></button>
+                                        </div>
+                                    </div>
+                                    <form data-parsley-validate="true" id="frmMobileNo" data-parent="MobileNo">
+                                        <div class="row" id="divMobileNoForm" style="display:none">
+                                            <div class="col-md-12 col-12">
+                                                <div class="mb-1">
+                                                    <label class="form-label contentSecondary">Mobile Number</label>
+                                                    <input type="text" id="MobileNo" name="MobileNo" class="form-control input" placeholder="Mobile No" required data-parsley-errors-container="#err-MobileNo" data-parsley-maxlength="15" maxlength="15" autocomplete="off">
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-5">
+                                                <input type="hidden" name="Status" value="4">
+                                                <button type="submit" class="btn btn-primary ReadAndWrite">Save changes</button>
+                                                <button type="button" class="btn btn-outline-primary btnCancel" data-parent="MobileNo">Cancel</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                    <hr />
+                                    <div class="row" id="divBirthDayLabel">
+                                        <div class="col-sm-5">
+                                            <div class="action-tags">
+                                                <div class="form-group">
+                                                    <label class="form-label contentTertiary">Date of birth</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="action-tags">
+                                                <div class="form-group">
+                                                    <span id="lblBirthDay" class="contentValue"></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-1">
+                                            <button type="button" class="btn btn-icon btn-flat-primary waves-effect btnEditAccount" data-parent="BirthDay" style="padding:0px"><i class="b-size icons8-black-edit" data-size="16"></i></button>
+                                        </div>
+                                    </div>
+                                    <form data-parsley-validate="true" id="frmBirthDay" data-parent="BirthDay">
+                                        <div class="row" id="divBirthDayForm" style="display:none">
+                                            <div class="col-md-12 col-12">
+                                                <div class="mb-1">
+                                                    <label class="form-label contentSecondary">Date of birth</label>
+                                                    <input type="text" id="BirthDay" name="BirthDay" class="form-control input pickadate" placeholder="BirthDay" required data-parsley-errors-container="#err-BirthDay" data-parsley-maxlength="10" maxlength="10" autocomplete="off">
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-5">
+                                                <input type="hidden" name="Status" value="5">
+                                                <button type="submit" class="btn btn-primary ReadAndWrite">Save changes</button>
+                                                <button type="button" class="btn btn-outline-primary btnCancel" data-parent="BirthDay">Cancel</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane" id="paymentaccount" aria-labelledby="paymentaccount-tab" role="tabpanel">
+                    <div id="place-order" class="list-view product-checkout">
+                        <div class="checkout-items ScrollDesign" style="height: 650px;overflow-x: hidden;overflow-y:auto">
+                            <section id="basic-horizontal-layouts">
+                                <div class="row">
+                                    <div class="col-md-12 col-12">
+                                        <div class="card" style="margin-bottom: 10px;background-color: transparent;">
+                                            <div class="row" style="padding-top:10px;height:55px;margin-right:0px;padding-left:20px">
+                                                <div class="col-sm-3" style="padding: 0px;padding-left:0px">
+                                                    <button type="button" class="btn btn-primary btn-block" id="btnAddPaymentAccount" style="border-radius:12px;background-color:#7573B6!important">
+                                                        <i class="b-size icons8-white-plus" data-size="16"></i> Add payment account
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                            <!-- Start List -->
+                            <div id="divAccountlList">
+                            </div>
+                            <!-- End List -->
+                        </div>
+                        <div class="checkout-options">
+                            <div class="card">
+                                <div class="card-body ScrollDesign" style="height: 650px;overflow-x: hidden;overflow-y:auto">
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <span>Linked on <span id="sdCreateDate"></span></span>
+                                        </div>
+                                    </div>
+                                    <h4 class="card-title" style="padding-top:10px;font-weight: 700;font-size: 32px;line-height: 48px;margin:0px" id="sdTypesName"></h4>
+                                    <label class="section-label mb-1" id="sdBankName"></label>
+                                    <br />
+                                    <button type="button" id="btnSDEdit" class="btn btn-outline-primary" style="border-radius: 12px;"><i class="b-size icons8-black-edit"></i></button>
+                                    <button type="button" id="btnSDDelete" class="btn btn-outline-danger" style="border-radius: 12px;"><i class="b-size icons8-black-waste"></i></button>
+                                    <hr />
+                                    <div class="price-details">
+                                        <div class="row">
+                                            <div class="col-sm-6">
+                                                <div class="action-tags">
+                                                    <div class="form-group">
+                                                        <label class="form-label contentTertiary">Cardholder’s name</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <div class="action-tags">
+                                                    <div class="form-group">
+                                                        <span id="sdAccount" class="contentValue"></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <hr />
+                                        <div class="row">
+                                            <div class="col-sm-6">
+                                                <div class="action-tags">
+                                                    <div class="form-group">
+                                                        <label class="form-label contentTertiary">Credit/Debit card number</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <div class="action-tags">
+                                                    <div class="form-group">
+                                                        <span id="sdAccountNumber" class="contentValue"></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="divider divider-dark">
+                                            <div class="divider-text"><i class="icons8-black-bill"></i></div>
+                                        </div>
+                                        <div class="action-tags">
+                                            <label class="form-label" style="color:black!important;font-weight:bold">
+                                                Transaction history
+                                            </label>
+                                        </div>
+                                        <div class="card-transaction" id="PaymentBody">
+                                            <hr />
+                                            <div class="transaction-item">
+                                                <div class="media">
+                                                    <div class="media-body">
+                                                        <label class="transaction-title" style="font-weight:bold;color:black!important;font-size:16px">Meralco payment</label><br />
+                                                        <label>Bill in QC</label><br />
+                                                        <label>Acc no.: 1234567890</label><br />
+                                                    </div>
+                                                </div>
+                                                <div style="text-align:right">
+                                                    <label style="font-weight: bold; color: black !important; font-size: 16px">P -8,000.00</label><br />
+                                                    <label>Ref no. 1234567890</label><br />
+                                                    <label>April 27, 2022 9:00 PM</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Checkout Place Order Right ends -->
+                        </div>
+                        @*</div>*@
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal modal-slide-in sidebar-todo-modal fade" id="mdlAccount">
+    <div class="modal-dialog sidebar-xl">
+        <div class="modal-content p-0">
+            <form id="frmAccounts" data-parsley-validate="true">
+                <div class="modal-header align-items-center mb-1">
+                    <h5 class="modal-title">Add Payment Account</h5>
+                    <div class="todo-item-action d-flex align-items-center justify-content-between ml-auto">
+                        <span class="todo-item-favorite cursor-pointer mr-75" data-dismiss="modal" aria-label="Close"><i class="icons8-black-multiply"></i></span>
+                    </div>
+                </div>
+                <div class="modal-body flex-grow-1 pb-sm-0 pb-3">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <label class="form-label" style="font-weight: 700; font-size: 16px;color: #333133;">Information</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="action-tags">
+                                <div class="form-group">
+                                    <label class="form-label">Bank <span class="text-danger">*</span></label>
+                                    <select class="form-control input" id="Bank" name="Bank" required></select>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Cardholder’s name <span class="text-danger">*</span></label>
+                                    <input type="text" id="Account" name="Account" required class="new-todo-item-title form-control input" placeholder="Enter cardholder’s name" autocomplete="off" />
+                                </div>
+                                <div class="form-group">
+                                    <div class="d-flex justify-content-between">
+                                        <label class="form-label">Enter credit/Debit card number<span class="text-danger">*</span></label>
+                                    </div>
+                                    <div class="input-group input-group-merge">
+                                        <input type="text" id="AccountNumber" name="AccountNumber" required class="new-todo-item-title form-control input" placeholder="Enter credit/Debit card number" autocomplete="off" />
+                                        <div class="input-group-append">
+                                            <span class="input-group-text">
+                                                <i class="icons8-purple-visa" style="color:#25215E"></i>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Type <span class="text-danger">*</span></label>
+                                    <select class="form-control input" id="Types" name="Types" required></select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row" id="divCreditCard">
+                        <div class="col-sm-6">
+                            <div class="action-tags">
+                                <div class="form-group">
+                                    <label class="form-label">Expirtation date <span class="text-danger">*</span></label>
+                                    <input type="text" id="ExpirationDate" name="ExpirationDate" class="new-todo-item-title form-control input" placeholder="MM/YYYY" autocomplete="off" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="action-tags">
+                                <div class="form-group">
+                                    <label class="form-label">CVC/CVV<span class="text-danger">*</span></label>
+                                    <input type="text" id="CVCCVV" name="CVCCVV" class="new-todo-item-title form-control input" placeholder="123" autocomplete="off" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <div class="row" style="width: 100%;">
+                        <div class="col-sm-6">
+                            <input type="hidden" name="ID" id="ID" class="input"/>
+                            <button type="submit" class="btn btn-outline-primary mr-1 btn-block">Save account</button>
+                        </div>
+                        <div class="col-sm-6">
+                            <button type="button" class="btn btn-block btn-outline-secondary" data-dismiss="modal">
+                                Cancel
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+@section scripts{
+    @Scripts.Render("~/Account-JS")
+}

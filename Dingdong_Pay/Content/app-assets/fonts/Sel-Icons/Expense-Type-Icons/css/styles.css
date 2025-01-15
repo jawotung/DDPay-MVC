@@ -1,0 +1,68 @@
+.icon-high-priority, 
+.icon-calendar, 
+.icon-date-from, 
+.icon-restaurant, 
+.icon-hand-with-smartphone-skin-type-1, 
+.icon-exterior, 
+.icon-car, 
+.icon-shopping-basket-2, 
+.icon-stethoscope, 
+.icon-pill, 
+.icon-island-on-water, 
+.icon-3d-glasses, 
+.icon-defend-family, 
+.icon-positive-dynamic, 
+.icon-wifi, 
+.icon-treatment-plan, 
+.icon-cash-, 
+.icon-puppy, 
+.icon-volunteering, 
+.icon-gift, 
+.icon-cash-in-hand, 
+.icon-bank-card-front-side, 
+.icon-water, 
+.icon-light, 
+.icon-hearts, 
+.icon-insert-card
+ {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    fill: currentColor;
+    vertical-align: -0.1em;
+}
+
+.icon-high-priority>svg, 
+.icon-calendar>svg, 
+.icon-date-from>svg, 
+.icon-restaurant>svg, 
+.icon-hand-with-smartphone-skin-type-1>svg, 
+.icon-exterior>svg, 
+.icon-car>svg, 
+.icon-shopping-basket-2>svg, 
+.icon-stethoscope>svg, 
+.icon-pill>svg, 
+.icon-island-on-water>svg, 
+.icon-3d-glasses>svg, 
+.icon-defend-family>svg, 
+.icon-positive-dynamic>svg, 
+.icon-wifi>svg, 
+.icon-treatment-plan>svg, 
+.icon-cash->svg, 
+.icon-puppy>svg, 
+.icon-volunteering>svg, 
+.icon-gift>svg, 
+.icon-cash-in-hand>svg, 
+.icon-bank-card-front-side>svg, 
+.icon-water>svg, 
+.icon-light>svg, 
+.icon-hearts>svg, 
+.icon-insert-card>svg
+ {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    fill: currentColor;
+    vertical-align: -0.1em;
+}
+

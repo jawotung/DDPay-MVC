@@ -1,0 +1,27 @@
+.b-size[data-size="16"] {
+    font-size: 16px
+}
+
+.b-size[data-size="24"] {
+    font-size: 24px
+}
+
+.b-size[data-size="36"] {
+    font-size: 36px
+}
+
+.b-size[data-size="50"] {
+    font-size: 50px
+}
+
+.b-size[data-size="64"] {
+    font-size: 64px
+}
+
+.b-size[data-size="72"] {
+    font-size: 72px
+}
+
+.b-size[data-size="100"] {
+    font-size: 100px
+}

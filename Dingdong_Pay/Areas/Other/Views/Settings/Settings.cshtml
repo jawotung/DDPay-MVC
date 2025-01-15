@@ -1,0 +1,574 @@
+﻿@{
+    ViewBag.Title = "Settings";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section css{
+    @Styles.Render("~/Settings-CSS")
+<style>
+    .label-black-c{
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 24px;
+    }
+</style>
+    <link href="~/Content/app-assets/css/pages/app-ecommerce.css" rel="stylesheet" />
+}
+<div class="app-content content ecommerce-application">
+    <div class="content-overlay"></div>
+    <div class="header-navbar-shadow"></div>
+    <div class="content-wrapper container-xxl p-0">
+        <div class="content-header row">
+            <div class="col-12">
+                <p style="font-size:24px;font-weight:700!important;line-height:36px;color:#25215E">@ViewBag.Title</p>
+            </div>
+        </div>
+    </div>
+    <div class="content-wrapper container-xxl p-0">
+        <div class="content-header row">
+            <div class="content-header-left col-md-9 col-12 mb-2">
+            </div>
+        </div>
+        <div class="content-body">
+            <ul class="nav nav-pills" role="tablist" style="background-color:white;">
+                <li class="nav-item">
+                    <a style="font-size: 16px;padding: 15px;" class="nav-link d-flex align-items-center active" id="Security-tab" data-toggle="tab" href="#Security" aria-controls="account" role="tab" aria-selected="true">
+                        <span class="d-none d-sm-block"><i class="icons8-black-lock"></i>Security and privacy</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a style="font-size: 16px;padding: 15px;" class="nav-link d-flex align-items-center" id="Support-tab" data-toggle="tab" href="#Support" aria-controls="information" role="tab" aria-selected="false">
+                        <span class="d-none d-sm-block"><i class="icons8-black-technical-support"></i> Support</span>
+                    </a>
+                </li>
+            </ul>
+            <div class="tab-content">
+                <div class="tab-pane active" id="Security" aria-labelledby="Security-tab" role="tabpanel">
+                    <div id="mainSecurity">
+                        <div class="row">
+                            <div class="col-lg-3 col-12 order-2 order-lg-1">
+                            </div>
+                            <div class="col-lg-6 col-12 order-1 order-lg-2">
+                                <a id="aPassword" class="cardClick">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <div class="row">
+                                                <div class="col-sm-2" style="height: 100px;width: 100px;position: relative;">
+                                                    <div style="top: 50%;position: absolute;top: 50%;transform: translateY(-50%);">
+                                                        <div style="width: 75px; height: 75px; background: #EAE9F7; border-radius: 100px; margin: 0px 24px;">
+                                                            <span class="b-size" data-size="50" style="margin-left: 12px;">
+                                                                <i class="icons8-purple-eye" style="color:#7573B6"></i>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-10" style="height: 100px;width: 100px;position: relative;">
+                                                    <div style="top: 50%;position: absolute;top: 50%;transform: translateY(-50%);">
+                                                        <h6 class="mb-0">
+                                                            <label class="text-body" style="font-size:20px;color:black;font-weight:bold;padding-right:50px">Update password</label>
+                                                        </h6>
+                                                        <span class="delivery-date text-muted" style="line-height:30px">Change your password for a more secured account</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a id="aNotification" class="cardClick">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <div class="row">
+                                                <div class="col-sm-2" style="height: 100px;width: 100px;position: relative;">
+                                                    <div style="top: 50%;position: absolute;top: 50%;transform: translateY(-50%);">
+                                                        <div style="width: 75px; height: 75px; background: #EAE9F7; border-radius: 100px; margin: 0px 24px;">
+                                                            <span class="b-size" data-size="50" style="margin-left: 12px;">
+                                                                <i class="icons8-purple-notification" style="color:#7573B6"></i>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-10" style="height: 100px;width: 100px;position: relative;">
+                                                    <div style="top: 50%;position: absolute;top: 50%;transform: translateY(-50%);">
+                                                        <h6 class="mb-0">
+                                                            <label class="text-body" style="font-size:20px;color:black;font-weight:bold;padding-right:50px">Notification settings</label>
+                                                        </h6>
+                                                        <span class="delivery-date text-muted" style="line-height:30px">Customize how you would like to receive your alerts</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a id="aTerms" class="cardClick">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <div class="row">
+                                                <div class="col-sm-2" style="height: 100px;width: 100px;position: relative;">
+                                                    <div style="top: 50%;position: absolute;top: 50%;transform: translateY(-50%);">
+                                                        <div style="width: 75px; height: 75px; background: #EAE9F7; border-radius: 100px; margin: 0px 24px;">
+                                                            <span class="b-size" data-size="50" style="margin-left: 12px;">
+                                                                <i class="icons8-purple-file" style="color:#7573B6"></i>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-10" style="height: 100px;width: 100px;position: relative;">
+                                                    <div style="top: 50%;position: absolute;top: 50%;transform: translateY(-50%);">
+                                                        <h6 class="mb-0">
+                                                            <label class="text-body" style="font-size:20px;color:black;font-weight:bold;padding-right:50px">Terms and Privacy Policy</label>
+                                                        </h6>
+                                                        <span class="delivery-date text-muted" style="line-height:30px">View dingdong Pay’s terms and privacy policy</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="divPassword" style="display:none">
+                        <div class="row">
+                            <div class="col-lg-3 col-12 order-2 order-lg-1">
+                            </div>
+                            <div class="col-lg-6 col-12 order-1 order-lg-2">
+                                <div class="row" style="padding-bottom:20px">
+                                    <div class="col-lg-12">
+                                        <a class="HcardClick" style="font-size: 14px; font-weight: 500; color: #7573b6;">
+                                            <i class="icons8-purple-back"></i> Back to Security
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-body" style="padding: 30px;">
+                                        <h4 class="card-title" style="font-style: normal;font-weight: 700;font-size: 32px;line-height: 48px;letter-spacing: 0.01em;">Update password</h4>
+                                        <div class="card-subtitle contentTertiary">Please type in your new password below.</div>
+                                        <div class="form-group" style="padding-top:20px">
+                                            <div class="d-flex justify-content-between">
+                                                <label for="login-password">New Password</label>
+                                            </div>
+                                            <div class="input-group input-group-merge form-password-toggle">
+                                                <input class="form-control form-control-merge" id="Password" type="password" name="Password" placeholder="············" aria-describedby="login-password" tabindex="2">
+                                                <div class="input-group-append">
+                                                    <span class="input-group-text cursor-pointer btnEye" data-password="Password" style="border: solid 1px #d8d6de;height: 38px;">
+                                                        <i class="icons8-eye-lgrey"></i>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="d-flex justify-content-between">
+                                                <label for="login-password">Retype Password</label>
+                                            </div>
+                                            <div class="input-group input-group-merge form-password-toggle">
+                                                <input class="form-control form-control-merge" id="ResetPassword" type="password" name="ResetPassword" placeholder="············" aria-describedby="login-password" tabindex="2">
+                                                <div class="input-group-append">
+                                                    <span class="input-group-text cursor-pointer btnEye" data-password="ResetPassword" style="border: solid 1px #d8d6de;height: 38px;">
+                                                        <i class="icons8-eye-lgrey"></i>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-lg-4 offset-sm-4">
+                                                <button class="btn btn-primary btn-block">Update password</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="divTerms" style="display:none">
+                        <div class="row">
+                            <div class="col-lg-3 col-12 order-2 order-lg-1">
+                            </div>
+                            <div class="col-lg-6 col-12 order-1 order-lg-2">
+                                <div class="row" style="padding-bottom:20px">
+                                    <div class="col-lg-12">
+                                        <a class="HcardClick" style="font-size: 14px; font-weight: 500; color: #7573b6;">
+                                            <i class="icons8-purple-back"></i> Back to Security
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="card ScrollDesign" style="height: 600px;overflow: auto;">
+                                    <div class="card-body" style="padding: 30px;">
+                                        <h4 class="card-title" style="font-style: normal;font-weight: 700;font-size: 32px;line-height: 48px;letter-spacing: 0.01em;">
+                                            Terms and Privacy Policy
+                                        </h4>
+                                        <div style="border: 16px solid white;border-radius: 12px;background: rgba(243,243,247,0.4);">
+                                            <p style="font-size: 16px; font-weight: 500; text-align: left; color: #333133;">
+                                                Terms and Conditions
+                                            </p>
+                                            <p>
+                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. At pretium imperdiet iaculis lectus justo, arcu amet, lectus velit. Mi, bibendum amet curabitur semper laoreet sociis feugiat praesent ut. Faucibus volutpat purus mauris pretium sed hendrerit. Justo, urna, placerat varius quis scelerisque dui tempor. Eget at fermentum tortor elit nunc adipiscing imperdiet facilisis. Elementum turpis libero, dictum sagittis. Viverra dictumst nibh sed duis purus cursus vitae sed.
+
+                                                Quam pretium nec pulvinar eget est dignissim dolor aliquam. Orci ipsum magna est elit. Amet ipsum egestas eget donec purus at amet massa diam. Quam egestas cursus vestibulum tellus, nibh phasellus purus. Mattis vulputate quis faucibus libero suspendisse feugiat bibendum. Velit egestas congue pharetra duis elit justo, tellus odio.
+                                                Cursus purus, ullamcorper lacinia amet arcu placerat in. Tempor nibh tincidunt massa, semper donec tortor, mattis amet. Sagittis orci mi viverra praesent proin sodales euismod. Nunc fringilla tincidunt tortor nibh. Semper malesuada arcu.
+
+                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. At pretium imperdiet iaculis lectus justo, arcu amet, lectus velit. Mi, bibendum amet curabitur semper laoreet sociis feugiat praesent ut. Faucibus volutpat purus mauris pretium sed hendrerit. Justo, urna, placerat varius quis scelerisque dui tempor. Eget at fermentum tortor elit nunc adipiscing imperdiet facilisis. Elementum turpis libero, dictum sagittis. Viverra dictumst nibh sed duis purus cursus vitae sed.
+
+                                                Quam pretium nec pulvinar eget est dignissim dolor aliquam. Orci ipsum magna est elit. Amet ipsum egestas eget donec purus at amet massa diam. Quam egestas cursus vestibulum tellus, nibh phasellus purus. Mattis vulputate quis faucibus libero suspendisse feugiat bibendum. Velit egestas congue pharetra duis elit justo, tellus odio.
+                                                Cursus purus, ullamcorper lacinia amet arcu placerat in. Tempor nibh tincidunt massa, semper donec tortor, mattis amet. Sagittis orci mi viverra praesent proin sodales euismod. Nunc fringilla tincidunt tortor nibh. Semper malesuada arcu.
+                                            </p>
+                                            <p>
+                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. At pretium imperdiet iaculis lectus justo, arcu amet, lectus velit. Mi, bibendum amet curabitur semper laoreet sociis feugiat praesent ut. Faucibus volutpat purus mauris pretium sed hendrerit. Justo, urna, placerat varius quis scelerisque dui tempor. Eget at fermentum tortor elit nunc adipiscing imperdiet facilisis. Elementum turpis libero, dictum sagittis. Viverra dictumst nibh sed duis purus cursus vitae sed.
+
+                                                Quam pretium nec pulvinar eget est dignissim dolor aliquam. Orci ipsum magna est elit. Amet ipsum egestas eget donec purus at amet massa diam. Quam egestas cursus vestibulum tellus, nibh phasellus purus. Mattis vulputate quis faucibus libero suspendisse feugiat bibendum. Velit egestas congue pharetra duis elit justo, tellus odio.
+                                                Cursus purus, ullamcorper lacinia amet arcu placerat in. Tempor nibh tincidunt massa, semper donec tortor, mattis amet. Sagittis orci mi viverra praesent proin sodales euismod. Nunc fringilla tincidunt tortor nibh. Semper malesuada arcu.
+
+                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. At pretium imperdiet iaculis lectus justo, arcu amet, lectus velit. Mi, bibendum amet curabitur semper laoreet sociis feugiat praesent ut. Faucibus volutpat purus mauris pretium sed hendrerit. Justo, urna, placerat varius quis scelerisque dui tempor. Eget at fermentum tortor elit nunc adipiscing imperdiet facilisis. Elementum turpis libero, dictum sagittis. Viverra dictumst nibh sed duis purus cursus vitae sed.
+
+                                                Quam pretium nec pulvinar eget est dignissim dolor aliquam. Orci ipsum magna est elit. Amet ipsum egestas eget donec purus at amet massa diam. Quam egestas cursus vestibulum tellus, nibh phasellus purus. Mattis vulputate quis faucibus libero suspendisse feugiat bibendum. Velit egestas congue pharetra duis elit justo, tellus odio.
+                                                Cursus purus, ullamcorper lacinia amet arcu placerat in. Tempor nibh tincidunt massa, semper donec tortor, mattis amet. Sagittis orci mi viverra praesent proin sodales euismod. Nunc fringilla tincidunt tortor nibh. Semper malesuada arcu.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="divSuccessfull" style="display:none">
+                        <div class="row">
+                            <div class="col-lg-3 col-12 order-2 order-lg-1">
+                            </div>
+                            <div class="col-lg-6 col-12 order-1 order-lg-2">
+                                <div class="card">
+                                    <div class="card-body" style="padding: 30px;">
+                                        <h2 class="card-title font-weight-bold mb-1" style="font-size: 32px; font-weight: 700!important; color: #25215e;line-height:48px" id="h2Msg"></h2>
+                                        <img src="~/Content/app-assets/fonts/Sel-Icons/DDP Icons/Illustrations/success.png" style="width: 300px;padding-bottom: 40px;display: block;margin-left: auto;margin-right: auto;width: 50%;" />
+                                        <form action="@Url.Action("Index", "Login" )">
+                                            <div class="row">
+                                                <div class="col-lg-4 offset-sm-4">
+                                                    <button class="btn btn-primary btn-block" tabindex="4" style="font-size: 16px; font-weight: 500; color: #979597;">Back to log in</button>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane" id="Support" aria-labelledby="Support-tab" role="tabpanel">
+                    <div id="mainSupport">
+                        <div class="row">
+                            <div class="col-lg-3 col-12 order-2 order-lg-1">
+                            </div>
+                            <div class="col-lg-6 col-12 order-1 order-lg-2">
+                                <a id="aFAQ" class="cardClick">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <div class="row">
+                                                <div class="col-sm-2" style="height: 100px;width: 100px;position: relative;">
+                                                    <div style="top: 50%;position: absolute;top: 50%;transform: translateY(-50%);">
+                                                        <div style="width: 75px; height: 75px; background: #EAE9F7; border-radius: 100px; margin: 0px 24px;">
+                                                            <span class="b-size" data-size="50" style="margin-left: 12px;">
+                                                                <i class="icons8-purple-eye" style="color:#7573B6"></i>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-10" style="height: 100px;width: 100px;position: relative;">
+                                                    <div style="top: 50%;position: absolute;top: 50%;transform: translateY(-50%);">
+                                                        <h6 class="mb-0">
+                                                            <label class="text-body" style="font-size:20px;color:black;font-weight:bold;padding-right:50px">FAQs</label>
+                                                        </h6>
+                                                        <span class="delivery-date text-muted" style="line-height:30px">Browse through frequently asked questions</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a id="aMessege" class="cardClick">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <div class="row">
+                                                <div class="col-sm-2" style="height: 100px;width: 100px;position: relative;">
+                                                    <div style="top: 50%;position: absolute;top: 50%;transform: translateY(-50%);">
+                                                        <div style="width: 75px; height: 75px; background: #EAE9F7; border-radius: 100px; margin: 0px 24px;">
+                                                            <span class="b-size" data-size="50" style="margin-left: 12px;">
+                                                                <i class="icons8-purple-notification" style="color:#7573B6"></i>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-10" style="height: 100px;width: 100px;position: relative;">
+                                                    <div style="top: 50%;position: absolute;top: 50%;transform: translateY(-50%);">
+                                                        <h6 class="mb-0">
+                                                            <label class="text-body" style="font-size:20px;color:black;font-weight:bold;padding-right:50px">Send us a message</label>
+                                                        </h6>
+                                                        <span class="delivery-date text-muted" style="line-height:30px">Submit a ticket to voice your concerns or questions</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="divFAQ" style="display:none">
+                        <div class="row">
+                            <div class="col-lg-1 col-12 order-2 order-lg-1">
+                            </div>
+                            <div class="col-lg-10 col-12 order-1 order-lg-2">
+                                <div class="row" style="padding-bottom:20px">
+                                    <div class="col-lg-12">
+                                        <a class="HcardClick" style="font-size: 14px; font-weight: 500; color: #7573b6;">
+                                            <i class="icons8-purple-back"></i> Back to support
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="nav-vertical">
+                                            <ul class="nav nav-tabs nav-left flex-column" role="tablist">
+                                                <li class="nav-item">
+                                                    <a class="nav-link active" id="tabOverview" data-toggle="tab" aria-controls="taboverview" href="#taboverview" role="tab" aria-selected="true">Overview</a>
+                                                    <hr />
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link" id="tabBiils" data-toggle="tab" aria-controls="tabbiils" href="#tabbiils" role="tab" aria-selected="false">Biils</a>
+                                                    <hr />
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link" id="tabAccount" data-toggle="tab" aria-controls="tabaccount" href="#tabaccount" role="tab" aria-selected="false">Account</a>
+                                                    <hr />
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link" id="tabTransaction" data-toggle="tab" aria-controls="tabtransaction" href="#tabtransaction" role="tab" aria-selected="false">Transaction</a>
+                                                    <hr />
+                                                </li>
+                                            </ul>
+                                            <div class="tab-content">
+                                                <div class="tab-pane active" id="taboverview" role="tabpanel" aria-labelledby="tabOverview">
+                                                    <h4 class="card-title" style="font-style: normal;font-weight: 700;font-size: 32px;line-height: 48px;letter-spacing: 0.01em;">
+                                                        Overview
+                                                    </h4>
+                                                    <ul class="list-group">
+                                                        <li class="list-group-item label-black-c" style="padding:20px">
+                                                            <div class="row">
+                                                                <div class="col-lg-10">
+                                                                    This is a question
+                                                                </div>
+                                                                <div class="col-lg-2">
+                                                                    <a href="">
+                                                                        <span class="b-size" data-size="24" style="float: right">
+                                                                            <i class="icons8-purple-forward"></i>
+                                                                        </span>
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                        <li class="list-group-item label-black-c" style="padding:20px">
+                                                            <div class="row">
+                                                                <div class="col-lg-10">
+                                                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dictum vitae sodales ut dignissim sed malesuada vitae egestas.
+                                                                </div>
+                                                                <div class="col-lg-2">
+                                                                    <a href="">
+                                                                        <span class="b-size" data-size="24" style="float: right">
+                                                                            <i class="icons8-purple-forward"></i>
+                                                                        </span>
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                        <li class="list-group-item label-black-c" style="padding:20px">
+                                                            <div class="row">
+                                                                <div class="col-lg-10">
+                                                                    Ac aliquam, odio sagittis facilisis nam orci nisi, malesuada.
+                                                                </div>
+                                                                <div class="col-lg-2">
+                                                                    <a href="">
+                                                                        <span class="b-size" data-size="24" style="float: right">
+                                                                            <i class="icons8-purple-forward"></i>
+                                                                        </span>
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                        <li class="list-group-item label-black-c" style="padding:20px">
+                                                            <div class="row">
+                                                                <div class="col-lg-10">
+                                                                    Amet pretium quisque morbi viverra posuere maecenas enim vitae tempus. Tortor risus velit, nunc, nulla sit morbi nec consequat. Et.
+                                                                </div>
+                                                                <div class="col-lg-2">
+                                                                    <a href="">
+                                                                        <span class="b-size" data-size="24" style="float: right">
+                                                                            <i class="icons8-purple-forward"></i>
+                                                                        </span>
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <div class="tab-pane" id="tabbiils" role="tabpanel" aria-labelledby="tabAccount">
+                                                    <p>
+                                                        Sugar plum tootsie roll biscuit caramels. Liquorice brownie pastry cotton candy oat cake fruitcake
+                                                        jelly chupa chups. Sweet fruitcake cheesecake biscuit cotton candy. Cookie powder marshmallow donut.
+                                                        Pudding caramels pastry powder cake soufflé wafer caramels. Jelly-o pie cupcake.
+                                                    </p>
+                                                </div>
+                                                <div class="tab-pane" id="tabaccount" role="tabpanel" aria-labelledby="tabAccount">
+                                                    <p>
+                                                        Icing croissant powder jelly bonbon cake marzipan fruitcake. Tootsie roll marzipan tart marshmallow
+                                                        pastry cupcake chupa chups cookie. Fruitcake dessert lollipop pudding jelly. Cookie dragée jujubes
+                                                        croissant lemon drops cotton candy. Carrot cake candy canes powder donut toffee cookie.
+                                                    </p>
+                                                </div>
+                                                <div class="tab-pane" id="tabtransaction" role="tabpanel" aria-labelledby="tabTransaction">
+                                                    <p>
+                                                        Icing croissant powder jelly bonbon cake marzipan fruitcake. Tootsie roll marzipan tart marshmallow
+                                                        pastry cupcake chupa chups cookie. Fruitcake dessert lollipop pudding jelly. Cookie dragée jujubes
+                                                        croissant lemon drops cotton candy. Carrot cake candy canes powder donut toffee cookie.
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="divMessege" style="display:none">
+                        <div class="row">
+                            <div class="col-lg-3 col-12 order-2 order-lg-1">
+                            </div>
+                            <div class="col-lg-6 col-12 order-1 order-lg-2">
+                                <div class="row" style="padding-bottom:20px">
+                                    <div class="col-lg-12">
+                                        <a class="HcardClick" style="font-size: 14px; font-weight: 500; color: #7573b6;">
+                                            <i class="icons8-purple-back"></i> Back to support
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-body" style="padding: 30px;">
+                                        <h4 class="card-title" style="font-style: normal;font-weight: 700;font-size: 32px;line-height: 48px;letter-spacing: 0.01em;">Send us a message</h4>
+                                        <div class="card-subtitle contentTertiary">PleasePlease fill up the fields below.</div>
+                                        <div class="form-group" style="padding-top:20px">
+                                            <label class="form-label">Purpose<span class="text-danger">*</span></label>
+                                            <select class="form-control input select2-manual" data-name="Biller" id="Biller" name="Biller" required>
+                                                <option value="" selected hidden></option>
+                                                <option value="Feedback">Feedback</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="form-label">Full Name<span class="text-danger">*</span></label>
+                                            <input type="text" id="FullName" name="FullName" required class="new-todo-item-title form-control input" placeholder="Enter Full Name" autocomplete="off" />
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="form-label">Email<span class="text-danger">*</span></label>
+                                            <input type="text" id="Email" name="Email" required class="new-todo-item-title form-control input" data-type="email" placeholder="Enter Email" autocomplete="off" />
+                                        </div>
+                                        <div class="form-group ManualBill">
+                                            <label class="form-label">Message<span class="text-danger">*</span></label>
+                                            <textarea class="form-control" id="Message" name="Message" rows="4" placeholder="Textarea" required></textarea>
+                                        </div>
+                                        <div class="form-group ManualBill">
+                                            <label class="form-label">Document</label>
+                                            <input type="file" id="Document" name="Document" class="new-todo-item-title form-control input" placeholder="Upload attachment" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="modal modal-slide-in sidebar-todo-modal fade" id="mdlAccount">
+    <div class="modal-dialog sidebar-xl">
+        <div class="modal-content p-0">
+            <form id="frmAccounts" data-parsley-validate="true">
+                <div class="modal-header align-items-center mb-1">
+                    <h5 class="modal-title">Add Payment Account</h5>
+                    <div class="todo-item-action d-flex align-items-center justify-content-between ml-auto">
+                        <span class="todo-item-favorite cursor-pointer mr-75" data-dismiss="modal" aria-label="Close"><i class="icons8-black-multiply"></i></span>
+                    </div>
+                </div>
+                <div class="modal-body flex-grow-1 pb-sm-0 pb-3">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <label class="form-label" style="font-weight: 700; font-size: 16px;color: #333133;">Information</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="action-tags">
+                                <div class="form-group">
+                                    <label class="form-label">Bank <span class="text-danger">*</span></label>
+                                    <select class="form-control input" id="Bank" name="Bank" required></select>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Cardholder’s name <span class="text-danger">*</span></label>
+                                    <input type="text" id="Account" name="Account" required class="new-todo-item-title form-control input" placeholder="Enter cardholder’s name" autocomplete="off" />
+                                </div>
+                                <div class="form-group">
+                                    <div class="d-flex justify-content-between">
+                                        <label class="form-label">Enter credit/Debit card number<span class="text-danger">*</span></label>
+                                    </div>
+                                    <div class="input-group input-group-merge">
+                                        <input type="text" id="AccountNumber" name="AccountNumber" required class="new-todo-item-title form-control input" placeholder="Enter credit/Debit card number" autocomplete="off" />
+                                        <div class="input-group-append">
+                                            <span class="input-group-text">
+                                                <i class="icons8-purple-visa" style="color:#25215E"></i>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Type <span class="text-danger">*</span></label>
+                                    <select class="form-control input" id="Types" name="Types" required></select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row" id="divCreditCard">
+                        <div class="col-sm-6">
+                            <div class="action-tags">
+                                <div class="form-group">
+                                    <label class="form-label">Expirtation date <span class="text-danger">*</span></label>
+                                    <input type="text" id="ExpirationDate" name="ExpirationDate" class="new-todo-item-title form-control input" placeholder="MM/YYYY" autocomplete="off" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="action-tags">
+                                <div class="form-group">
+                                    <label class="form-label">CVC/CVV<span class="text-danger">*</span></label>
+                                    <input type="text" id="CVCCVV" name="CVCCVV" class="new-todo-item-title form-control input" placeholder="123" autocomplete="off" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <div class="row" style="width: 100%;">
+                        <div class="col-sm-6">
+                            <input type="hidden" name="ID" id="ID" class="input" />
+                            <button type="submit" class="btn btn-outline-primary mr-1 btn-block">Save account</button>
+                        </div>
+                        <div class="col-sm-6">
+                            <button type="button" class="btn btn-block btn-outline-secondary" data-dismiss="modal">
+                                Cancel
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+@section scripts{
+    @Scripts.Render("~/Settings-JS")
+}

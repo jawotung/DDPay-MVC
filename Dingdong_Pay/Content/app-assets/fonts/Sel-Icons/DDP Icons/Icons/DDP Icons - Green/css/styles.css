@@ -1,0 +1,222 @@
+/*!
+ * Icon Font DDP Icons - Green-a1cb1fd62b
+ * Made with love by Icons8 [ https://icons8.com/ ] using webfont [ https://github.com/itgalaxy/webfont ]
+ *
+ * Contacts:
+ *    [ https://icons8.com/contact ]
+ *
+ * Follow Icon8 on
+ *    Twitter [ https://twitter.com/icons_8 ]
+ *    Facebook [ https://www.facebook.com/Icons8 ]
+ *    Google+ [ https://plus.google.com/+Icons8 ]
+ *    GitHub [ https://github.com/icons8 ]
+ */
+
+@font-face {
+  font-family: "DDP Icons - Green-a1cb1fd62b";
+  src: url("../fonts/DDP Icons - Green-a1cb1fd62b.eot");
+  src: url("../fonts/DDP Icons - Green-a1cb1fd62b.eot?#iefix") format("embedded-opentype"),
+  url("../fonts/DDP Icons - Green-a1cb1fd62b.woff2") format("woff2"),
+  url("../fonts/DDP Icons - Green-a1cb1fd62b.woff") format("woff"),
+  url("../fonts/DDP Icons - Green-a1cb1fd62b.ttf") format("truetype"),
+  url("../fonts/DDP Icons - Green-a1cb1fd62b.svg#font") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  @font-face {
+    font-family: "DDP Icons - Green-a1cb1fd62b";
+    src: url("../fonts/DDP Icons - Green-a1cb1fd62b.svg#DDP Icons - Green-a1cb1fd62b") format("svg");
+  }
+}
+
+[data-icons8]:before {
+  content: attr(data-icons8);
+}
+
+.icons8-green-calendar:before,
+.icons8-green-notification:before,
+.icons8-green-forward:before,
+.icons8-green-back:before,
+.icons8-green-expand-arrow:before,
+.icons8-green-collapse-arrow:before,
+.icons8-green-done:before,
+.icons8-green-settings:before,
+.icons8-green-technical-support:before,
+.icons8-green-male-user:before,
+.icons8-green-pie-chart:before,
+.icons8-green-ledger:before,
+.icons8-green-wallet:before,
+.icons8-green-bill:before,
+.icons8-green-dashboard-layout:before,
+.icons8-green-google:before,
+.icons8-green-bank-cards:before,
+.icons8-green-lock:before,
+.icons8-green-multiply:before,
+.icons8-green-add:before,
+.icons8-green-facebook-f:before,
+.icons8-green-mail:before,
+.icons8-green-padlock:before,
+.icons8-green-visa:before,
+.icons8-green-hide:before,
+.icons8-green-eye:before,
+.icons8-green-search:before,
+.icons8-green-plus:before,
+.icons8-green-upload:before,
+.icons8-green-list:before,
+.icons8-green-download:before,
+.icons8-green-flag-2:before,
+.icons8-green-available-updates:before,
+.icons8-green-organization:before,
+.icons8-green-approval:before,
+.icons8-green-funnel:before,
+.icons8-green-menu-vertical:before,
+.icons8-green-edit:before,
+.icons8-green-in-progress:before,
+.icons8-green-ok:before,
+.icons8-green-file:before,
+.icons8-green-waste:before,
+.icons8,
+[data-icons8]:before {
+  display: inline-block;
+  font-family: "DDP Icons - Green-a1cb1fd62b";
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  line-height: 1;
+  text-decoration: inherit;
+  text-rendering: optimizeLegibility;
+  text-transform: none;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+}
+
+
+.icons8-green-calendar:before {
+  content: "\f100";
+}
+.icons8-green-notification:before {
+  content: "\f101";
+}
+.icons8-green-forward:before {
+  content: "\f102";
+}
+.icons8-green-back:before {
+  content: "\f103";
+}
+.icons8-green-expand-arrow:before {
+  content: "\f104";
+}
+.icons8-green-collapse-arrow:before {
+  content: "\f105";
+}
+.icons8-green-done:before {
+  content: "\f106";
+}
+.icons8-green-settings:before {
+  content: "\f107";
+}
+.icons8-green-technical-support:before {
+  content: "\f108";
+}
+.icons8-green-male-user:before {
+  content: "\f109";
+}
+.icons8-green-pie-chart:before {
+  content: "\f10a";
+}
+.icons8-green-ledger:before {
+  content: "\f10b";
+}
+.icons8-green-wallet:before {
+  content: "\f10c";
+}
+.icons8-green-bill:before {
+  content: "\f10d";
+}
+.icons8-green-dashboard-layout:before {
+  content: "\f10e";
+}
+.icons8-green-google:before {
+  content: "\f10f";
+}
+.icons8-green-bank-cards:before {
+  content: "\f110";
+}
+.icons8-green-lock:before {
+  content: "\f111";
+}
+.icons8-green-multiply:before {
+  content: "\f112";
+}
+.icons8-green-add:before {
+  content: "\f113";
+}
+.icons8-green-facebook-f:before {
+  content: "\f114";
+}
+.icons8-green-mail:before {
+  content: "\f115";
+}
+.icons8-green-padlock:before {
+  content: "\f116";
+}
+.icons8-green-visa:before {
+  content: "\f117";
+}
+.icons8-green-hide:before {
+  content: "\f118";
+}
+.icons8-green-eye:before {
+  content: "\f119";
+}
+.icons8-green-search:before {
+  content: "\f11a";
+}
+.icons8-green-plus:before {
+  content: "\f11b";
+}
+.icons8-green-upload:before {
+  content: "\f11c";
+}
+.icons8-green-list:before {
+  content: "\f11d";
+}
+.icons8-green-download:before {
+  content: "\f11e";
+}
+.icons8-green-flag-2:before {
+  content: "\f11f";
+}
+.icons8-green-available-updates:before {
+  content: "\f120";
+}
+.icons8-green-organization:before {
+  content: "\f121";
+}
+.icons8-green-approval:before {
+  content: "\f122";
+}
+.icons8-green-funnel:before {
+  content: "\f123";
+}
+.icons8-green-menu-vertical:before {
+  content: "\f124";
+}
+.icons8-green-edit:before {
+  content: "\f125";
+}
+.icons8-green-in-progress:before {
+  content: "\f126";
+}
+.icons8-green-ok:before {
+  content: "\f127";
+}
+.icons8-green-file:before {
+  content: "\f128";
+}
+.icons8-green-waste:before {
+  content: "\f129";
+}

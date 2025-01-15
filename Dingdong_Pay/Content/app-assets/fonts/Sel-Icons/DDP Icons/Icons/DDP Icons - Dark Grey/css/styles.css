@@ -1,0 +1,222 @@
+/*!
+ * Icon Font DDP Icons - Dark Grey-a1cb1fd62b
+ * Made with love by Icons8 [ https://icons8.com/ ] using webfont [ https://github.com/itgalaxy/webfont ]
+ *
+ * Contacts:
+ *    [ https://icons8.com/contact ]
+ *
+ * Follow Icon8 on
+ *    Twitter [ https://twitter.com/icons_8 ]
+ *    Facebook [ https://www.facebook.com/Icons8 ]
+ *    Google+ [ https://plus.google.com/+Icons8 ]
+ *    GitHub [ https://github.com/icons8 ]
+ */
+
+@font-face {
+  font-family: "DDP Icons - Dark Grey-a1cb1fd62b";
+  src: url("../fonts/DDP Icons - Dark Grey-a1cb1fd62b.eot");
+  src: url("../fonts/DDP Icons - Dark Grey-a1cb1fd62b.eot?#iefix") format("embedded-opentype"),
+  url("../fonts/DDP Icons - Dark Grey-a1cb1fd62b.woff2") format("woff2"),
+  url("../fonts/DDP Icons - Dark Grey-a1cb1fd62b.woff") format("woff"),
+  url("../fonts/DDP Icons - Dark Grey-a1cb1fd62b.ttf") format("truetype"),
+  url("../fonts/DDP Icons - Dark Grey-a1cb1fd62b.svg#font") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  @font-face {
+    font-family: "DDP Icons - Dark Grey-a1cb1fd62b";
+    src: url("../fonts/DDP Icons - Dark Grey-a1cb1fd62b.svg#DDP Icons - Dark Grey-a1cb1fd62b") format("svg");
+  }
+}
+
+[data-icons8]:before {
+  content: attr(data-icons8);
+}
+
+.icons8-dgrey-calendar:before,
+.icons8-dgrey-notification:before,
+.icons8-dgrey-forward:before,
+.icons8-dgrey-back:before,
+.icons8-dgrey-expand-arrow:before,
+.icons8-dgrey-collapse-arrow:before,
+.icons8-dgrey-done:before,
+.icons8-dgrey-settings:before,
+.icons8-dgrey-technical-support:before,
+.icons8-dgrey-male-user:before,
+.icons8-dgrey-pie-chart:before,
+.icons8-dgrey-ledger:before,
+.icons8-dgrey-wallet:before,
+.icons8-dgrey-bill:before,
+.icons8-dgrey-dashboard-layout:before,
+.icons8-dgrey-google:before,
+.icons8-dgrey-bank-cards:before,
+.icons8-dgrey-lock:before,
+.icons8-dgrey-multiply:before,
+.icons8-dgrey-add:before,
+.icons8-dgrey-facebook-f:before,
+.icons8-dgrey-mail:before,
+.icons8-dgrey-padlock:before,
+.icons8-dgrey-visa:before,
+.icons8-dgrey-hide:before,
+.icons8-dgrey-eye:before,
+.icons8-dgrey-search:before,
+.icons8-dgrey-plus:before,
+.icons8-dgrey-upload:before,
+.icons8-dgrey-list:before,
+.icons8-dgrey-download:before,
+.icons8-dgrey-flag-2:before,
+.icons8-dgrey-available-updates:before,
+.icons8-dgrey-organization:before,
+.icons8-dgrey-approval:before,
+.icons8-dgrey-funnel:before,
+.icons8-dgrey-menu-vertical:before,
+.icons8-dgrey-edit:before,
+.icons8-dgrey-in-progress:before,
+.icons8-dgrey-ok:before,
+.icons8-dgrey-file:before,
+.icons8-dgrey-waste:before,
+.icons8,
+[data-icons8]:before {
+  display: inline-block;
+  font-family: "DDP Icons - Dark Grey-a1cb1fd62b";
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  line-height: 1;
+  text-decoration: inherit;
+  text-rendering: optimizeLegibility;
+  text-transform: none;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+}
+
+
+.icons8-dgrey-calendar:before {
+  content: "\f100";
+}
+.icons8-dgrey-notification:before {
+  content: "\f101";
+}
+.icons8-dgrey-forward:before {
+  content: "\f102";
+}
+.icons8-dgrey-back:before {
+  content: "\f103";
+}
+.icons8-dgrey-expand-arrow:before {
+  content: "\f104";
+}
+.icons8-dgrey-collapse-arrow:before {
+  content: "\f105";
+}
+.icons8-dgrey-done:before {
+  content: "\f106";
+}
+.icons8-dgrey-settings:before {
+  content: "\f107";
+}
+.icons8-dgrey-technical-support:before {
+  content: "\f108";
+}
+.icons8-dgrey-male-user:before {
+  content: "\f109";
+}
+.icons8-dgrey-pie-chart:before {
+  content: "\f10a";
+}
+.icons8-dgrey-ledger:before {
+  content: "\f10b";
+}
+.icons8-dgrey-wallet:before {
+  content: "\f10c";
+}
+.icons8-dgrey-bill:before {
+  content: "\f10d";
+}
+.icons8-dgrey-dashboard-layout:before {
+  content: "\f10e";
+}
+.icons8-dgrey-google:before {
+  content: "\f10f";
+}
+.icons8-dgrey-bank-cards:before {
+  content: "\f110";
+}
+.icons8-dgrey-lock:before {
+  content: "\f111";
+}
+.icons8-dgrey-multiply:before {
+  content: "\f112";
+}
+.icons8-dgrey-add:before {
+  content: "\f113";
+}
+.icons8-dgrey-facebook-f:before {
+  content: "\f114";
+}
+.icons8-dgrey-mail:before {
+  content: "\f115";
+}
+.icons8-dgrey-padlock:before {
+  content: "\f116";
+}
+.icons8-dgrey-visa:before {
+  content: "\f117";
+}
+.icons8-dgrey-hide:before {
+  content: "\f118";
+}
+.icons8-dgrey-eye:before {
+  content: "\f119";
+}
+.icons8-dgrey-search:before {
+  content: "\f11a";
+}
+.icons8-dgrey-plus:before {
+  content: "\f11b";
+}
+.icons8-dgrey-upload:before {
+  content: "\f11c";
+}
+.icons8-dgrey-list:before {
+  content: "\f11d";
+}
+.icons8-dgrey-download:before {
+  content: "\f11e";
+}
+.icons8-dgrey-flag-2:before {
+  content: "\f11f";
+}
+.icons8-dgrey-available-updates:before {
+  content: "\f120";
+}
+.icons8-dgrey-organization:before {
+  content: "\f121";
+}
+.icons8-dgrey-approval:before {
+  content: "\f122";
+}
+.icons8-dgrey-funnel:before {
+  content: "\f123";
+}
+.icons8-dgrey-menu-vertical:before {
+  content: "\f124";
+}
+.icons8-dgrey-edit:before {
+  content: "\f125";
+}
+.icons8-dgrey-in-progress:before {
+  content: "\f126";
+}
+.icons8-dgrey-ok:before {
+  content: "\f127";
+}
+.icons8-dgrey-file:before {
+  content: "\f128";
+}
+.icons8-dgrey-waste:before {
+  content: "\f129";
+}
